@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rui</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 首页 -->
+    <string name="search">搜索</string>
+
+    <string name="price">￥:</string>
+    <string name="brows">浏览:</string>
+
+</resources>
