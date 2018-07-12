@@ -3,6 +3,9 @@ package com.rui.xb.purple.mvp.dagger;
 
 
 import com.rui.xb.purple.MainFragmentActivity;
+import com.rui.xb.purple.ui.activity.category.CategoryActivity;
+import com.rui.xb.purple.ui.activity.dispatch.idle.DispatchIdleActivity;
+import com.rui.xb.purple.ui.activity.dispatch.request.DispatchRequestActivity;
 import com.rui.xb.purple.zFunctionTest.ui.MvpTestActivity;
 
 import dagger.Module;
@@ -25,5 +28,20 @@ public abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector()
     abstract MainFragmentActivity mainFragmentActivity();
+
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract DispatchIdleActivity idleActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract DispatchRequestActivity requestActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract CategoryActivity categoryActivity();
+
+
 
 }

@@ -1,5 +1,7 @@
 package com.rui.xb.purple.mvp.dagger;
 
+import com.rui.xb.purple.ui.fragment.CategoryFragmentFragment;
+import com.rui.xb.purple.ui.fragment.DispatchFragment;
 import com.rui.xb.purple.ui.fragment.FirstFragment;
 import com.rui.xb.purple.ui.fragment.HomeFragment;
 import com.rui.xb.purple.ui.fragment.SecFragment;
@@ -37,5 +39,12 @@ public abstract class FragmentBindingModule {
     @ContributesAndroidInjector
     abstract HomeFragment homeFragment();
 
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract DispatchFragment dispatchFragment();
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract CategoryFragmentFragment categoryFragment();
 
 }

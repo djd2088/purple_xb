@@ -3,6 +3,8 @@ package com.rui.xb.purple.mvp.base;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -20,6 +22,9 @@ public class BaseMVPPresenter<M extends BaseMVPModule,V extends BaseMVPView> {
     protected M mModule;
 
     protected Context mContext;
+
+    @Inject
+    protected Gson gsonSingle;
 
     private CompositeDisposable disposables;
 

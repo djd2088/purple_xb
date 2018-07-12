@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.rui.xb.purple.ui.activity.dispatch.idle.DispatchIdleActivity">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:background="@color/bg_gray"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:src="@mipmap/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:text="@string/upload_pic"
+                android:textSize="@dimen/sp_13" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <LinearLayout style="@style/ll_rl_52"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="标题" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@null"
+                android:hint="输入标题"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_200"
+                android:paddingTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <View style="@style/line_1dp" />
+
+        <LinearLayout style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="描述" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@null"
+                android:hint="输入内容"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_200"
+                android:paddingTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <View style="@style/line_10dp" />
+
+        <RelativeLayout
+            style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="分类" />
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_40"
+                android:text="大学英语" />
+
+            <ImageView
+                android:id="@+id/temp_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@mipmap/arrow_right" />
+
+        </RelativeLayout>
+
+        <View style="@style/line_1dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:gravity="center">
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="卖价" />
+
+            <TextView
+                android:id="@+id/temp_tv"
+                style="@style/tv_gray_666_14sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="元"
+                android:textColor="@color/we_chat_black" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_4"
+                android:layout_toLeftOf="@id/temp_tv"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="输入价格"
+                android:paddingLeft="@dimen/dp_200"
+                android:textColor="@color/main"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/sp_14"
+                android:inputType="numberDecimal"/>
+
+
+        </RelativeLayout>
+
+        <View style="@style/line_1dp" />
+        <RelativeLayout style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="运费" />
+
+            <TextView
+                android:id="@+id/temp_tv1"
+                style="@style/tv_gray_666_14sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="元"
+                android:textColor="@color/we_chat_black" />
+
+            <EditText
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginRight="@dimen/dp_4"
+                android:layout_toLeftOf="@id/temp_tv1"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="输入运费"
+                android:textColor="@color/main"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/sp_14"
+                android:inputType="numberDecimal"/>
+
+        </RelativeLayout>
+        <View style="@style/line_1dp" />
+
+        <Button
+            android:id="@+id/btn_dispatch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/button_bg"
+            android:clickable="false"
+            android:text="发布"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15" />
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</ScrollView>
+
+

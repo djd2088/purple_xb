@@ -2,6 +2,7 @@ package com.rui.xb.purple.base;
 
 
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,12 +17,14 @@ import android.widget.TextView;
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.base.BaseMVPView;
+import com.rui.xb.purple.utils.StatusBarUtil;
 import com.rui.xb.rui_core.ui.loader.RuiLoader;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import dagger.android.support.DaggerFragment;
 import qiu.niorgai.StatusBarCompat;
 
@@ -55,6 +58,8 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
     @Inject
     protected P mPresenter;
 
+    Unbinder unbinder;
+
     /** Context对象，保存当前Activity */
     protected FragmentActivity mContext;
 
@@ -71,13 +76,19 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
         View rootView = inflater.inflate(R.layout.activity_fragment_base, null);
         llContent = rootView.findViewById(R.id.ll_content);
         inflater.inflate(initMainView(), llContent);
-        ButterKnife.bind(this,rootView);
-        transparentStatusBar();
+        unbinder = ButterKnife.bind(this,rootView);
+        transparentStatusBar(false);
         // 初始化标题栏
         initTitleBar();
         // 初始化布局
         initDataAndView();
         return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
 
@@ -123,8 +134,15 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
     /**
      * 设置沉侵式状态栏
      */
-    protected void transparentStatusBar(){
-        StatusBarCompat.translucentStatusBar(getActivity(),true);
+    protected void transparentStatusBar(boolean avoidWhite){
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            StatusBarCompat.translucentStatusBar(getActivity(),true);
+            if (avoidWhite){
+                StatusBarUtil.StatusBarLightMode(getActivity());//避免白色
+            }
+        }
+
+
     }
     /**
      * 隐藏titleBar
@@ -147,7 +165,7 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
     /**
      * 隐藏ivLeft
      */
-    protected void hideIvLeft(String title){
+    protected void hideIvLeft(){
         ivLeft.setVisibility(View.GONE);
     }
 

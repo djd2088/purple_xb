@@ -8,11 +8,22 @@
     <color name="tv_black3">#333333</color>
 
     <color name="transparent">#00000000</color>
-
-    <color name="white">#FFFFFFFF</color>
+    <color name="half_transparent">#e0000000</color>
+    <color name="white">#FFFFFF</color>
     <color name="main">#FF4081</color>
     <color name="end">#C71585</color>
 
     <color name="font_gray">#999999</color>
+    <color name="bg">#dadada</color>
+    <color name="bg_gray">#F7F7F7</color>
+
+    <color name="line">#F8F8F8</color>
+
+    <color name="gray_666">#666666</color>
+    <color name="bg_white_FF">#FFFFFF</color>
+
+
+
+
 
 </resources>

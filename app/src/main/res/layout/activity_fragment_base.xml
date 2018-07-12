@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
+        android:background="@color/white"
         android:visibility="visible">
 
         <RelativeLayout
@@ -50,7 +51,8 @@
                 android:layout_marginRight="@dimen/dp_50"
                 android:gravity="center"
                 android:text="我的标题"
-                android:textSize="@dimen/sp_20"
+                android:textSize="@dimen/sp_17"
+                android:textColor="@color/we_chat_black"
                 tools:visibility="visible" />
 
             <ImageView

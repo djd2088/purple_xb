@@ -1,17 +1,14 @@
 package com.rui.xb.purple.zFunctionTest.ui;
 
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.base.BaseActivity;
 import com.rui.xb.purple.mvp.presenter.TestPresenter;
 import com.rui.xb.purple.mvp.view.TestView;
-import com.rui.xb.purple.utils.UrlRoute;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.functions.Consumer;
 
 public class MvpTestActivity extends BaseActivity<TestPresenter> implements TestView {
 
@@ -21,7 +18,7 @@ public class MvpTestActivity extends BaseActivity<TestPresenter> implements Test
 
     @Override
     protected void initTitleBar() {
-        letfClose();
+        leftClose();
         setTvTitle("我是个Title");
         setLlTitleBgColor(R.color.colorPrimary);
         showIvRightSetRes(R.mipmap.arrow_right); //一般图片文字二选一

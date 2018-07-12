@@ -14,8 +14,8 @@ import com.rui.xb.purple.R;
 import com.rui.xb.purple.base.BaseFragment;
 import com.rui.xb.purple.mvp.presenter.TestPresenter;
 import com.rui.xb.purple.mvp.view.TestView;
-import com.rui.xb.purple.ui.adapter.ProductAdapter;
-import com.rui.xb.purple.ui.adapter.model.ProductAdapterModel;
+import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
+import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
 import com.rui.xb.purple.utils.GlideImageLoader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -77,7 +77,7 @@ public class ThirdFragment extends BaseFragment<TestPresenter> implements TestVi
         adapter.addHeaderView(view);
 //        refreshLayout.autoRefresh();
         rvProduct.setLayoutManager(new GridLayoutManager(mContext,2));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(mContext,DividerItemDecoration
+//        rvCategoryLeft.addItemDecoration(new DividerItemDecoration(mContext,DividerItemDecoration
 //                .VERTICAL));
         rvProduct.setItemAnimator(new DefaultItemAnimator());
         rvProduct.setAdapter(adapter);

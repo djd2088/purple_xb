@@ -9,4 +9,8 @@
     <string name="price">￥:</string>
     <string name="brows">浏览:</string>
 
+
+    <!--发布-->
+    <string name="upload_pic">上传照片</string>
+
 </resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rui.xb.purple.ui.activity.dispatch.request.DispatchRequestActivity">
+
+    <View style="@style/line_10dp" />
+
+    <LinearLayout style="@style/ll_rl_52">
+
+        <TextView
+            style="@style/tv_gray_666_14sp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="标题" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@null"
+            android:hint="输入标题"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_200"
+            android:paddingTop="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <View style="@style/line_1dp" />
+
+    <LinearLayout style="@style/ll_rl_52">
+
+        <TextView
+            style="@style/tv_gray_666_14sp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="描述" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@null"
+            android:hint="输入内容"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_200"
+            android:paddingTop="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <View style="@style/line_10dp" />
+
+    <RelativeLayout style="@style/ll_rl_52">
+
+        <TextView
+            style="@style/tv_gray_666_14sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="分类" />
+
+        <TextView
+            style="@style/tv_gray_666_14sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_40"
+            android:text="大学英语" />
+
+        <ImageView
+            android:id="@+id/temp_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_12"
+            android:src="@mipmap/arrow_right" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>

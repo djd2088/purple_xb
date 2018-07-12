@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.rui.xb.purple.ui.fragment.CategoryFragmentFragment;
+import com.rui.xb.purple.ui.fragment.DispatchFragment;
 import com.rui.xb.purple.ui.fragment.FirstFragment;
 import com.rui.xb.purple.ui.fragment.HomeFragment;
 import com.rui.xb.purple.ui.fragment.SecFragment;
@@ -44,6 +46,12 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
     @Inject
     HomeFragment homeFragment;
 
+    @Inject
+    DispatchFragment dispatchFragment;
+
+    @Inject
+    CategoryFragmentFragment categoryFragment;
+
     @BindView(R.id.bottom_bar)
     LinearLayoutCompat mBottomBar;
 
@@ -61,7 +69,6 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
         ButterKnife.bind(this);
         initData();
         initView();
-
     }
 
     /** 根据需要修改*/
@@ -78,8 +85,8 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
 
         //初始化fragment
         FRAGMENTS.add(homeFragment);
-        FRAGMENTS.add(secFragment);
-        FRAGMENTS.add(thirdFragment);
+        FRAGMENTS.add(categoryFragment);
+        FRAGMENTS.add(dispatchFragment);
         FRAGMENTS.add(thurFragment);
     }
 

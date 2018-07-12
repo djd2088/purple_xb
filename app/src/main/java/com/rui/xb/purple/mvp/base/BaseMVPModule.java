@@ -2,8 +2,11 @@ package com.rui.xb.purple.mvp.base;
 
 
 
+import com.google.gson.Gson;
+import com.rui.xb.purple.utils.Des;
 import com.rui.xb.rui_core.net.rx.IRxRestService;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -19,6 +22,9 @@ public class BaseMVPModule {
 
     @Inject
     protected IRxRestService netClient;
+
+    @Inject
+    protected Gson gsonSingle;
 
     @Inject
     protected BaseMVPModule() {
@@ -49,5 +55,13 @@ public class BaseMVPModule {
 //                .subscribeOn(Schedulers.io());
 //    }
 //
+
+
+    protected Map encodeByDes(Map<String,Object> param){
+        String encodeString = Des.strEnc(gsonSingle.toJson(param),"100001","","");
+        Map<String,Object> request = new HashMap<>();
+        request.put("param",encodeString);
+        return request;
+    }
 
 }

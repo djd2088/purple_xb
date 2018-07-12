@@ -1,6 +1,7 @@
 package com.rui.xb.purple.base;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.base.BaseMVPView;
+import com.rui.xb.purple.utils.StatusBarUtil;
 import com.rui.xb.rui_core.app.AppManager;
+import com.rui.xb.rui_core.app.enums.ECommon;
 import com.rui.xb.rui_core.ui.loader.RuiLoader;
 
 import javax.inject.Inject;
@@ -52,9 +55,9 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
         setContentView(R.layout.activity_fragment_base);
         bindView(initMainView());
         ButterKnife.bind(this);
+        transparentStatusBar(false);
         initTitleBar();
         initDataAndView();
-        StatusBarCompat.translucentStatusBar(this,true);
         // 添加到应用管理
         AppManager.getInstance().addActivity(this);
         //设置标题栏
@@ -115,9 +118,16 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
     /**
      * 设置沉侵式状态栏
      */
-    protected void transparentStatusBar(){
-        StatusBarCompat.translucentStatusBar(this,true);
+    protected void transparentStatusBar(boolean avoidWhite){
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            StatusBarCompat.translucentStatusBar(this,true);
+            if (avoidWhite){
+                StatusBarUtil.StatusBarLightMode(this);//避免白色
+            }
+        }
+
     }
+
 
     /**
      * 隐藏titleBar
@@ -133,6 +143,10 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
         tvTitle.setText(title);
     }
 
+    protected void setTvTitleAndColor(String title,int color){
+        tvTitle.setText(title);
+        tvTitle.setTextColor(getResources().getColor(color));
+    }
     /**
      * 隐藏ivLeft
      */
@@ -182,7 +196,7 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
         return tvRight;
     }
 
-    protected void letfClose(){
+    protected void leftClose(){
         ivLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -201,5 +215,9 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
     @Override
     public void disLoading() {
         RuiLoader.stopLoading();
+    }
+
+    protected Bundle getBundle(){
+       return getIntent().getBundleExtra(ECommon.BUNDLE.name());
     }
 }

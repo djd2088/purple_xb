@@ -5,40 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:background="@drawable/status_bar_background"
-        android:paddingBottom="@dimen/dp_8"
-        android:paddingLeft="@dimen/dp_8"
-        android:paddingRight="@dimen/dp_8">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/search_bg"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="@dimen/dp_10"
-                android:src="@mipmap/top_search" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/search"
-                android:textColor="@color/font_gray"
-                android:textSize="@dimen/sp_12" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-
     <com.youth.banner.Banner
         android:id="@+id/banner_home"
         android:layout_width="match_parent"

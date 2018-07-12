@@ -4,15 +4,16 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/bg</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <!--<style name="AppWelcome" parent="android:Theme.Translucent.NoTitleBar.Fullscreen">-->
     <!--activity no appcompatactivity-->
     <!--</style>-->
 
-    <style name="AppTheme.NoActionBar" >
+    <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -22,4 +23,28 @@
         <item name="android:windowBackground">@mipmap/launcher_00</item>
     </style>
 
+    <style name="line_1dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:background">@color/line</item>
+    </style>
+    <style name="line_10dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_10</item>
+        <item name="android:background">@color/line</item>
+    </style>
+
+    <style name="tv_gray_666_14sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/gray_666</item>
+    </style>
+
+    <style name="ll_rl_52">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_52</item>
+        <item name="android:background">@color/bg_white_FF</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 </resources>

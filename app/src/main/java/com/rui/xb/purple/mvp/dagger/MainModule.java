@@ -3,6 +3,7 @@ package com.rui.xb.purple.mvp.dagger;
 import android.content.Context;
 import android.os.Handler;
 
+import com.google.gson.Gson;
 import com.rui.xb.purple.utils.UrlRoute;
 import com.rui.xb.rui_core.net.rx.IRxRestService;
 
@@ -63,5 +64,12 @@ public class MainModule {
     @Singleton
     IRxRestService rxNetClient(Retrofit retrofit) {
         return retrofit.create(IRxRestService.class);
+    }
+
+
+    @Provides
+    @Singleton
+    Gson gsonSingle(){
+        return new Gson();
     }
 }
