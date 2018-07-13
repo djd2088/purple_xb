@@ -2,14 +2,11 @@ package com.rui.xb.purple.ui.fragment;
 
 
 import android.support.v4.app.Fragment;
-import android.widget.Button;
 
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.base.BaseFragment;
-import com.rui.xb.purple.mvp.presenter.TestPresenter;
-import com.rui.xb.purple.mvp.view.TestView;
+import com.rui.xb.purple.mvp.presenter.home.HomePresenter;
 import com.rui.xb.purple.zFunctionTest.ui.HeadImageActivity;
-import com.rui.xb.purple.zFunctionTest.ui.MvpTestActivity;
 import com.rui.xb.purple.zFunctionTest.ui.NetTestActivity;
 import com.rui.xb.purple.zFunctionTest.ui.RecycleViewTestActivity;
 import com.rui.xb.purple.zFunctionTest.ui.WebViewActivity;
@@ -22,7 +19,7 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstFragment extends BaseFragment<TestPresenter> implements TestView {
+public class FirstFragment extends BaseFragment<HomePresenter> {
 
     @Inject
     public FirstFragment() {
@@ -50,7 +47,7 @@ public class FirstFragment extends BaseFragment<TestPresenter> implements TestVi
 
     @OnClick(R.id.btn_mvp_test)
     void click6(){
-        UiUtil.startIntent(getContext(), MvpTestActivity.class);
+        UiUtil.startIntent(getContext(), HeadImageActivity.class);
     }
 
 
@@ -70,10 +67,6 @@ public class FirstFragment extends BaseFragment<TestPresenter> implements TestVi
 
     }
 
-    @Override
-    public Button getBtnImButton() {
-        return null;
-    }
 }
 
 

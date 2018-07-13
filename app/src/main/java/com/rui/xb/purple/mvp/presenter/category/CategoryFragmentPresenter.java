@@ -15,6 +15,7 @@ import com.rui.xb.purple.ui.adapter.recycle_listview.CategoryLeftAdapter;
 import com.rui.xb.purple.ui.adapter.recycle_listview.CategoryRightAdapter;
 import com.rui.xb.purple.ui.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
 import com.rui.xb.rui_core.app.Rui;
+import com.rui.xb.rui_core.utils.UiUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,8 +82,6 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
         categoryLeftAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(mContext, position + "", Toast
-                        .LENGTH_SHORT).show();
                 categoryLeftAdapter.setClickItem(position);
                 categoryLeftAdapter.notifyDataSetChanged();
                 rightList.clear();
@@ -93,6 +92,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
                         BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
                         dealData(model,"right");
                         categoryRightAdapter.setNewData(rightList);
+
                     }
                 }, new Consumer<Throwable>() {
                     @Override

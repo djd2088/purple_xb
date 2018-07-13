@@ -16,7 +16,7 @@ import butterknife.BindView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoryFragmentFragment extends BaseFragment<CategoryFragmentPresenter> implements CategoryFragmentView {
+public class CategoryFragment extends BaseFragment<CategoryFragmentPresenter> implements CategoryFragmentView {
 
     @BindView(R.id.rv_level_left)
     RecyclerView rvCategoryLeft;
@@ -26,7 +26,7 @@ public class CategoryFragmentFragment extends BaseFragment<CategoryFragmentPrese
 
 
     @Inject
-    public CategoryFragmentFragment() {
+    public CategoryFragment() {
         // Required empty public constructor
     }
 

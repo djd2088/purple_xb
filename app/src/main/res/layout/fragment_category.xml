@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="4"
-    tools:context="com.rui.xb.purple.ui.fragment.CategoryFragmentFragment">
+    tools:context="com.rui.xb.purple.ui.fragment.CategoryFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_level_left"

@@ -12,13 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.rui.xb.purple.ui.fragment.CategoryFragmentFragment;
+import com.rui.xb.purple.ui.fragment.CategoryFragment;
 import com.rui.xb.purple.ui.fragment.DispatchFragment;
 import com.rui.xb.purple.ui.fragment.FirstFragment;
 import com.rui.xb.purple.ui.fragment.HomeFragment;
-import com.rui.xb.purple.ui.fragment.SecFragment;
-import com.rui.xb.purple.ui.fragment.ThirdFragment;
-import com.rui.xb.purple.ui.fragment.ThurFragment;
 import com.rui.xb.purple.ui.fragment.ot.BottomTabBean;
 
 import java.util.ArrayList;
@@ -35,22 +32,13 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
     FirstFragment firstFragment;
 
     @Inject
-    SecFragment secFragment;
-
-    @Inject
-    ThirdFragment thirdFragment;
-
-    @Inject
-    ThurFragment thurFragment;
-
-    @Inject
     HomeFragment homeFragment;
 
     @Inject
     DispatchFragment dispatchFragment;
 
     @Inject
-    CategoryFragmentFragment categoryFragment;
+    CategoryFragment categoryFragment;
 
     @BindView(R.id.bottom_bar)
     LinearLayoutCompat mBottomBar;
@@ -87,7 +75,7 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
         FRAGMENTS.add(homeFragment);
         FRAGMENTS.add(categoryFragment);
         FRAGMENTS.add(dispatchFragment);
-        FRAGMENTS.add(thurFragment);
+        FRAGMENTS.add(homeFragment);
     }
 
 

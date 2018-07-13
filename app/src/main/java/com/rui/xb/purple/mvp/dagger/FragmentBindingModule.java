@@ -1,12 +1,9 @@
 package com.rui.xb.purple.mvp.dagger;
 
-import com.rui.xb.purple.ui.fragment.CategoryFragmentFragment;
+import com.rui.xb.purple.ui.fragment.CategoryFragment;
 import com.rui.xb.purple.ui.fragment.DispatchFragment;
 import com.rui.xb.purple.ui.fragment.FirstFragment;
 import com.rui.xb.purple.ui.fragment.HomeFragment;
-import com.rui.xb.purple.ui.fragment.SecFragment;
-import com.rui.xb.purple.ui.fragment.ThirdFragment;
-import com.rui.xb.purple.ui.fragment.ThurFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -23,19 +20,6 @@ public abstract class FragmentBindingModule {
     abstract FirstFragment firstFragment();
 
     @FragmentScoped
-    @ContributesAndroidInjector()
-    abstract SecFragment secFragment();
-
-    @FragmentScoped
-    @ContributesAndroidInjector()
-    abstract ThirdFragment thridFragment();
-
-
-    @FragmentScoped
-    @ContributesAndroidInjector()
-    abstract ThurFragment thurFragment();
-
-    @FragmentScoped
     @ContributesAndroidInjector
     abstract HomeFragment homeFragment();
 
@@ -45,6 +29,6 @@ public abstract class FragmentBindingModule {
 
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract CategoryFragmentFragment categoryFragment();
+    abstract CategoryFragment categoryFragment();
 
 }

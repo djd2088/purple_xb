@@ -6,7 +6,6 @@ import com.rui.xb.purple.MainFragmentActivity;
 import com.rui.xb.purple.ui.activity.category.CategoryActivity;
 import com.rui.xb.purple.ui.activity.dispatch.idle.DispatchIdleActivity;
 import com.rui.xb.purple.ui.activity.dispatch.request.DispatchRequestActivity;
-import com.rui.xb.purple.zFunctionTest.ui.MvpTestActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -20,10 +19,6 @@ import dagger.android.ContributesAndroidInjector;
  */
 @Module
 public abstract class ActivityBindingModule {
-
-    @ActivityScoped
-    @ContributesAndroidInjector()
-    abstract MvpTestActivity mvpTestActivity();
 
     @ActivityScoped
     @ContributesAndroidInjector()
@@ -41,7 +36,5 @@ public abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector
     abstract CategoryActivity categoryActivity();
-
-
 
 }

@@ -1,9 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.rui.xb.purple.ui.activity.category.CategoryActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <View style="@style/line_1dp"></View>
+
+    <RadioGroup
+        android:id="@+id/rg_sort"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RadioButton
+            android:id="@+id/rb_composite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="综合" />
+
+        <RadioButton
+            android:id="@+id/rb_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="价格" />
+
+        <RadioButton
+            android:id="@+id/rb_brows"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="浏览量" />
+
+    </RadioGroup>
+
+    <View style="@style/line_1dp"></View>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl_category_level3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        app:tl_indicator_color="@color/main"
+        app:tl_indicator_height="@dimen/dp_2"
+        app:tl_indicator_width_equal_title="true"
+        app:tl_tab_padding="@dimen/dp_20"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/main"
+        app:tl_textUnselectColor="@color/we_chat_black">
+
+    </com.flyco.tablayout.SlidingTabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout_category_product"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlAccentColor="@color/main"
+        app:srlEnableHeaderTranslationContent="true"
+        app:srlPrimaryColor="@android:color/white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_category_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>
