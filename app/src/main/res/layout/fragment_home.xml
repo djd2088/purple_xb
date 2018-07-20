@@ -7,6 +7,7 @@
     tools:context="com.rui.xb.purple.ui.fragment.HomeFragment">
 
     <LinearLayout
+        android:id="@+id/ll_search"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:background="@drawable/status_bar_background"
@@ -32,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/search"
-                android:textColor="@color/font_gray"
+                android:textColor="@color/gray_999"
                 android:textSize="@dimen/sp_12" />
 
         </LinearLayout>

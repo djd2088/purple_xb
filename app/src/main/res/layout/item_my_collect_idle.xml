@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_12">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_seller_head"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_seller_name"
+            style="@style/tv_black_333_14sp"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_toRightOf="@id/iv_seller_head"
+            android:text="sellerName" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignBaseline="@+id/tv_seller_name"
+            android:layout_alignBottom="@+id/tv_seller_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="￥ : 200" />
+
+        <ImageView
+            android:id="@+id/iv_main_pic"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_below="@id/iv_seller_head"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_name_and_desc"
+            style="@style/tv_black_333_14sp"
+            android:layout_below="@id/iv_main_pic"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="NameAndDesc" />
+
+        <TextView
+            android:id="@+id/tv_school_name"
+            style="@style/tv_gray_666_12sp"
+            android:layout_below="@id/tv_name_and_desc"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="xxxx大学" />
+
+        <ToggleButton
+            android:id="@+id/tg_btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_school_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_10dp"/>
+
+</android.support.v7.widget.LinearLayoutCompat>

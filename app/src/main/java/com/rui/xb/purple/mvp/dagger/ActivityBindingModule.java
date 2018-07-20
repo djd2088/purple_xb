@@ -3,9 +3,25 @@ package com.rui.xb.purple.mvp.dagger;
 
 
 import com.rui.xb.purple.MainFragmentActivity;
+import com.rui.xb.purple.mvp.dagger.annotation.ActivityScoped;
+import com.rui.xb.purple.ui.activity.home.OrderDetailActivity;
 import com.rui.xb.purple.ui.activity.category.CategoryActivity;
 import com.rui.xb.purple.ui.activity.dispatch.idle.DispatchIdleActivity;
 import com.rui.xb.purple.ui.activity.dispatch.request.DispatchRequestActivity;
+import com.rui.xb.purple.ui.activity.home.GroupBuyingActivity;
+import com.rui.xb.purple.ui.activity.home.MasterLifeActivity;
+import com.rui.xb.purple.ui.activity.home.ProductDetailActivity;
+import com.rui.xb.purple.ui.activity.home.RequestRegionActivity;
+import com.rui.xb.purple.ui.activity.home.SearchActivity;
+import com.rui.xb.purple.ui.activity.me.AdviceUsActivity;
+import com.rui.xb.purple.ui.activity.me.JoinUsActivity;
+import com.rui.xb.purple.ui.activity.me.MyCollectActivity;
+import com.rui.xb.purple.ui.activity.me.MyDispatchActivity;
+import com.rui.xb.purple.ui.activity.me.MyRequestActivity;
+import com.rui.xb.purple.ui.activity.me.MyTradeActivity;
+import com.rui.xb.purple.ui.activity.me.SetActivity;
+import com.rui.xb.purple.ui.activity.me.SponsorUsActivity;
+import com.rui.xb.purple.zFunctionTest.ui.Test1Activity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -31,10 +47,79 @@ public abstract class ActivityBindingModule {
 
     @ActivityScoped
     @ContributesAndroidInjector
-    abstract DispatchRequestActivity requestActivity();
+    abstract DispatchRequestActivity dispatchRequestActivity();
 
     @ActivityScoped
     @ContributesAndroidInjector
     abstract CategoryActivity categoryActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract MyDispatchActivity dispatchActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract MyCollectActivity collectActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract MyRequestActivity myRequestActivity ();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract MyTradeActivity tradeActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract SponsorUsActivity sponsorUsActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract JoinUsActivity joinUsActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract AdviceUsActivity adviceUsActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract SetActivity setActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract ProductDetailActivity productDetailActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract OrderDetailActivity orderDetailActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract RequestRegionActivity requestRegionActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract MasterLifeActivity masterRegionActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract GroupBuyingActivity groupBuyingActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract SearchActivity searchActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract Test1Activity test1Activity();
+
+
+
+
+
+
+
+
+
 
 }

@@ -22,7 +22,7 @@ public class ProductAdapter extends BaseQuickAdapter<ProductAdapterModel,BaseVie
 
     @Override
     protected void convert(BaseViewHolder helper, ProductAdapterModel item) {
-//        helper.setText(R.id.iv_main_pic,item.getImageUrl());
+//        helper.setText(R.id.iv_main_pic,item.getMainPic());
         helper.setText(R.id.tv_price,item.getPrice());
         helper.setText(R.id.tv_brows,item.getBrows());
         helper.setText(R.id.tv_product_name,item.getProductName());

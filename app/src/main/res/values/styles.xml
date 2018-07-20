@@ -28,11 +28,14 @@
         <item name="android:layout_height">@dimen/dp_1</item>
         <item name="android:background">@color/line</item>
     </style>
+
     <style name="line_10dp">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_10</item>
         <item name="android:background">@color/line</item>
     </style>
+
+    <!--gray begin-->
 
     <style name="tv_gray_666_14sp">
         <item name="android:layout_width">wrap_content</item>
@@ -41,10 +44,51 @@
         <item name="android:textColor">@color/gray_666</item>
     </style>
 
+    <style name="tv_gray_666_12sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/gray_666</item>
+    </style>
+
+    <style name="tv_gray_999_10sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/gray_999</item>
+    </style>
+
+    <!--gray end-->
+
+    <!--black begin-->
+    <style name="tv_black_333_14sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/black_333</item>
+    </style>
+
+    <!--black end-->
+
+    <!--red begin-->
+    <style name="tv_red_5903_14sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/red_ff5903</item>
+    </style>
+
+
     <style name="ll_rl_52">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_52</item>
         <item name="android:background">@color/bg_white_FF</item>
         <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="rl_52">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_52</item>
+        <item name="android:background">@color/bg_white_FF</item>
     </style>
 </resources>

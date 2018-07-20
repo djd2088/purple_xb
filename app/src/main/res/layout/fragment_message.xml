@@ -1,0 +1,35 @@
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rui.xb.purple.ui.fragment.MessageFragment">
+
+    <View style="@style/line_10dp" />
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tl_message_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_5"
+        android:paddingTop="@dimen/dp_5"
+        app:tl_divider_color="@color/we_chat_black"
+        app:tl_divider_padding="@dimen/dp_13"
+        app:tl_divider_width="@dimen/dp_1"
+        app:tl_indicator_color="@color/main"
+        app:tl_indicator_height="@dimen/dp_2"
+        app:tl_indicator_width="@dimen/dp_20"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/main"
+        app:tl_textUnselectColor="@color/we_chat_black">
+
+    </com.flyco.tablayout.CommonTabLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_change"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

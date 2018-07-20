@@ -15,7 +15,7 @@
         android:background="@drawable/btn_border_native"
         android:gravity="center"
         android:text="@string/native_photo"
-        android:textColor="@color/tv_black3" />
+        android:textColor="@color/black_333" />
 
     <View
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:background="@drawable/btn_border_takephoto"
         android:gravity="center"
         android:text="@string/take_photo"
-        android:textColor="@color/tv_black3" />
+        android:textColor="@color/black_333" />
 
     <View
         android:layout_width="match_parent"
@@ -44,6 +44,6 @@
         android:background="@drawable/btn_border"
         android:gravity="center"
         android:text="@string/cancel_click"
-        android:textColor="@color/tv_black3" />
+        android:textColor="@color/black_333" />
 
 </LinearLayout>

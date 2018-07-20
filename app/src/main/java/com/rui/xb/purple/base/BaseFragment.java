@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ import qiu.niorgai.StatusBarCompat;
 public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFragment
         implements BaseMVPView {
 
+    private static final String TAG = "BaseFragment";
 
     @BindView(R.id.ll_title)
     LinearLayout llTitleBar;
@@ -236,4 +238,7 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
     public void disLoading() {
         RuiLoader.stopLoading();
     }
+
+    
+    
 }

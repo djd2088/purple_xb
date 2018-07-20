@@ -22,6 +22,7 @@
         android:weightSum="3">
 
         <LinearLayout
+            android:id="@+id/ll_request_region"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -38,11 +39,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
                 android:text="求购专区"
-                android:textColor="@color/font_gray"
+                android:textColor="@color/gray_999"
                 android:textSize="@dimen/sp_10" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_master_life"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -59,11 +61,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
                 android:text="考研人生"
-                android:textColor="@color/font_gray"
+                android:textColor="@color/gray_999"
                 android:textSize="@dimen/sp_10" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_group_buy"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -80,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
                 android:text="集中采购"
-                android:textColor="@color/font_gray"
+                android:textColor="@color/gray_999"
                 android:textSize="@dimen/sp_10" />
         </LinearLayout>
     </LinearLayout>

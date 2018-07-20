@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_12">
+
+        <ImageView
+            android:id="@+id/iv_main_pic"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            style="@style/tv_black_333_14sp"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/iv_main_pic"
+            android:text="productName" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignParentRight="true"
+            android:text="￥ : 200"
+            android:layout_marginRight="@dimen/dp_20"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignBottom="@id/iv_main_pic"
+            android:layout_alignStart="@+id/tv_product_name"
+            android:text="productstate" />
+
+    </RelativeLayout>
+
+    <View style="@style/line_10dp" />
+
+</android.support.v7.widget.LinearLayoutCompat>

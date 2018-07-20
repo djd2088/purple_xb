@@ -1,4 +1,4 @@
-package com.rui.xb.purple.mvp.dagger;
+package com.rui.xb.purple.mvp.dagger.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

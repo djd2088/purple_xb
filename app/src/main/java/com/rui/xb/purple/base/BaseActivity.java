@@ -21,6 +21,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
 import qiu.niorgai.StatusBarCompat;
 
@@ -48,13 +49,15 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
     @Inject
     protected P mPresenter;
 
+    Unbinder unbinder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_base);
         bindView(initMainView());
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         transparentStatusBar(false);
         initTitleBar();
         initDataAndView();
@@ -73,6 +76,7 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
             mPresenter.dispose();
             mPresenter.onDetachView();
         }
+        unbinder.unbind();
         super.onDestroy();
     }
 

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    android:padding="@dimen/dp_50"
+    app:cardCornerRadius="@dimen/dp_5"
+    app:cardElevation="@dimen/dp_5">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_10">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_request_title"
+            style="@style/tv_black_333_14sp"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/iv_head"
+            android:text="标题" />
+
+        <TextView
+            android:id="@+id/tv_request_desc"
+            style="@style/tv_gray_666_12sp"
+            android:layout_alignBottom="@id/iv_head"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/iv_head"
+            android:text="详细描述" />
+
+        <TextView
+            android:id="@+id/tv_manage"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_btn_grayf4_1dp"
+            android:gravity="center"
+            android:text="管理"
+            android:textColor="@color/gray_999" />
+
+        <TextView
+            android:id="@+id/tv_requester_name"
+            style="@style/tv_black_333_14sp"
+            android:layout_below="@id/iv_head"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="requesterName" />
+
+        <View
+            android:id="@+id/temp_line1"
+            style="@style/line_1dp"
+            android:layout_below="@id/tv_requester_name"
+            android:layout_marginTop="@dimen/dp_6" />
+
+        <TextView
+            android:id="@+id/temp_desire_price"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignStart="@id/tv_requester_name"
+            android:layout_below="@id/temp_line1"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="期望价格 : " />
+
+        <TextView
+            android:id="@+id/tv_desire_price"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignBottom="@id/temp_desire_price"
+            android:layout_toRightOf="@id/temp_desire_price"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/tv_request_time"
+            style="@style/tv_gray_666_12sp"
+            android:layout_alignBottom="@id/temp_desire_price"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="2018-08-09 22:00:32" />
+
+        <TextView
+            android:id="@+id/temp_phone"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignStart="@id/tv_requester_name"
+            android:layout_below="@id/temp_desire_price"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="手机 : " />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignBottom="@id/temp_phone"
+            android:layout_toRightOf="@id/temp_phone"
+            android:text="17601333108" />
+
+        <TextView
+            android:id="@+id/tv_qq"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignBottom="@id/temp_phone"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="137714205" />
+
+        <TextView
+            style="@style/tv_black_333_14sp"
+            android:layout_alignBottom="@id/temp_phone"
+            android:layout_toLeftOf="@id/tv_qq"
+            android:text="QQ : " />
+
+        <TextView
+            android:id="@+id/temp_wx"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignStart="@id/tv_requester_name"
+            android:layout_below="@id/temp_phone"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="微信 : " />
+
+        <TextView
+            android:id="@+id/tv_wx"
+            style="@style/tv_red_5903_14sp"
+            android:layout_alignBottom="@id/temp_wx"
+            android:layout_toRightOf="@id/temp_wx"
+            android:text="137714205" />
+
+        <TextView
+            android:id="@+id/tv_school_name"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignStart="@id/tv_requester_name"
+            android:layout_below="@id/temp_wx"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="xxxx大学" />
+
+        <ToggleButton
+            android:id="@+id/tg_btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_school_name"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

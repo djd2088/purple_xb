@@ -16,7 +16,9 @@ import com.rui.xb.purple.ui.fragment.CategoryFragment;
 import com.rui.xb.purple.ui.fragment.DispatchFragment;
 import com.rui.xb.purple.ui.fragment.FirstFragment;
 import com.rui.xb.purple.ui.fragment.HomeFragment;
-import com.rui.xb.purple.ui.fragment.ot.BottomTabBean;
+import com.rui.xb.purple.entity.BottomTabBean;
+import com.rui.xb.purple.ui.fragment.MeFragment;
+import com.rui.xb.purple.ui.fragment.MessageFragment;
 
 import java.util.ArrayList;
 
@@ -39,6 +41,12 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
 
     @Inject
     CategoryFragment categoryFragment;
+
+    @Inject
+    MeFragment meFragment;
+
+    @Inject
+    MessageFragment messageFragment;
 
     @BindView(R.id.bottom_bar)
     LinearLayoutCompat mBottomBar;
@@ -68,6 +76,8 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
                 getDrawableByMip(R.mipmap.tab_class_hover)));
         TAB_BEANS.add(new BottomTabBean("发布",getDrawableByMip(R.mipmap.tab_patients),
                 getDrawableByMip(R.mipmap.tab_patients_hover)));
+        TAB_BEANS.add(new BottomTabBean("消息",getDrawableByMip(R.mipmap.tab_patients),
+                getDrawableByMip(R.mipmap.tab_patients_hover)));
         TAB_BEANS.add(new BottomTabBean("我的",getDrawableByMip(R.mipmap.tab_doctor),
                 getDrawableByMip(R.mipmap.tab_doctor_hover)));
 
@@ -75,7 +85,8 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
         FRAGMENTS.add(homeFragment);
         FRAGMENTS.add(categoryFragment);
         FRAGMENTS.add(dispatchFragment);
-        FRAGMENTS.add(homeFragment);
+        FRAGMENTS.add(messageFragment);
+        FRAGMENTS.add(meFragment);
     }
 
 
@@ -92,7 +103,7 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
             final AppCompatTextView itemTitle = (AppCompatTextView) item.getChildAt(1);
             final BottomTabBean bean = TAB_BEANS.get(i);
             //初始化数据
-            itemIcon.setImageDrawable(bean.getICON_NOMAL());
+            itemIcon.setImageDrawable(bean.getICON_NORMAL());
             itemTitle.setText(bean.getTitle());
         }
         replaceFragment(mCurrentFragment);
@@ -127,7 +138,7 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
         for (int i = 0; i < count; i++) {
             final LinearLayout item = (LinearLayout) mBottomBar.getChildAt(i);
             final AppCompatImageView itemIcon = (AppCompatImageView) item.getChildAt(0);
-            itemIcon.setImageDrawable(TAB_BEANS.get(i).getICON_NOMAL());
+            itemIcon.setImageDrawable(TAB_BEANS.get(i).getICON_NORMAL());
             final AppCompatTextView itemTitle = (AppCompatTextView) item.getChildAt(1);
             itemTitle.setTextColor(mNormalColor);
         }

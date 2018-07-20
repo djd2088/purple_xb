@@ -3,12 +3,8 @@ package com.rui.xb.purple.mvp.presenter.category;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.rui.xb.purple.R;
@@ -20,11 +16,10 @@ import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
 import com.rui.xb.purple.ui.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
 import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
 import com.rui.xb.purple.ui.tablayout.SimplePageAdapter;
-import com.rui.xb.purple.ui.tablayout.TabLayoutFragment;
+import com.rui.xb.purple.ui.fragment.tablayout.TabLayoutFragment;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +40,8 @@ public class CategoryActivityPresenter extends BaseMVPPresenter<CategoryActivity
     @Inject
     public CategoryActivityPresenter() {
     }
+
+
 
     private List<CategoryLeftRightAdapterModel> categoryLevel3 = new ArrayList<>();
 
@@ -105,7 +102,7 @@ public class CategoryActivityPresenter extends BaseMVPPresenter<CategoryActivity
                 adapterModel.setName(name);
                 categoryLevel3.add(adapterModel);
                 mTitles[i] = name;
-                mFragments.add(TabLayoutFragment.getInstance());
+                mFragments.add(TabLayoutFragment.getInstance(""));
                 if (mSubId.equals(id)) {
                     current = i;
                 }
@@ -127,7 +124,7 @@ public class CategoryActivityPresenter extends BaseMVPPresenter<CategoryActivity
             ProductAdapterModel model = new ProductAdapterModel();
             model.setId(i);
             model.setBrows(i +"");
-            model.setImageUrl(i + "");
+            model.setMainPic(i + "");
             model.setPrice(i + "");
             model.setProductName("商品" + i);
             model.setSchoolName("大学" + i);

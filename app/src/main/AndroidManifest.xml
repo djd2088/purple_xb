@@ -39,6 +39,24 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".ui.activity.dispatch.request.DispatchRequestActivity" />
         <activity android:name=".ui.activity.category.CategoryActivity" />
+        <activity android:name=".ui.activity.me.MyDispatchActivity" />
+        <activity android:name=".ui.activity.me.MyRequestActivity" />
+        <activity android:name=".ui.activity.me.MyCollectActivity" />
+        <activity android:name=".ui.activity.me.MyTradeActivity" />
+        <activity
+            android:name=".ui.activity.me.SponsorUsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ui.activity.me.JoinUsActivity" />
+        <activity android:name=".ui.activity.me.AdviceUsActivity" />
+        <activity android:name=".ui.activity.me.SetActivity" />
+        <activity android:name=".ui.activity.home.RequestRegionActivity" />
+        <activity android:name=".ui.activity.home.MasterLifeActivity" />
+        <activity android:name=".ui.activity.home.GroupBuyingActivity" />
+        <activity android:name=".ui.activity.home.ProductDetailActivity" />
+        <activity android:name=".ui.activity.home.OrderDetailActivity" />
+        <activity android:name=".ui.activity.home.SearchActivity" />
+        <activity android:name=".zFunctionTest.ui.Test1Activity"></activity>
     </application>
 
 </manifest>

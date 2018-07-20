@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.rui.xb.purple.ui.activity.me.SponsorUsActivity">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/gray_999"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="如果您想赞助我们，烦请以下方式联系。"
+            android:textColor="@color/we_chat_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:text="方式一 : 直接通过以下方式联系" />
+
+            <View
+                style="@style/line_1dp"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="手机号 : 17601333108" />
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="QQ : 137714205" />
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="微信 : 12384625" />
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="邮箱 : djd2088@qq.com" />
+
+        </LinearLayout>
+
+        <View style="@style/line_10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tv_temp1"
+                style="@style/tv_black_333_14sp"
+                android:text="方式二 :    提交您的信息，我们会在第一时间联系您" />
+
+            <View
+                android:id="@+id/temp_line1"
+                style="@style/line_1dp"
+                android:layout_below="@id/tv_temp1"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/tv_black_333_14sp"
+                    android:layout_below="@id/temp_line1"
+                    android:text="手机号 : " />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入手机号"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/tv_black_333_14sp"
+                    android:text="扣扣号 : " />
+
+                <EditText
+                    android:id="@+id/et_qq"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入扣扣号"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/et_wx"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/tv_black_333_14sp"
+                    android:text="微信号 : " />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入微信号"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/tv_black_333_14sp"
+                    android:text="邮箱 : " />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入邮箱"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/line_10dp" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/main"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </android.support.v7.widget.LinearLayoutCompat>
+</ScrollView>
