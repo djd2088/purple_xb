@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_add_name"
+            style="@style/tv_black_333_14sp"
+            android:text="杜建东" />
+
+        <TextView
+            android:id="@+id/tv_add_phone"
+            style="@style/tv_black_333_14sp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/tv_add_name"
+            android:text="17601333108" />
+
+        <TextView
+            android:id="@+id/tv_default_add"
+            style="@style/tv_red_5903_12sp"
+            android:layout_alignParentRight="true"
+            android:text="[默认地址]" />
+
+        <TextView
+            android:id="@+id/tv_add_detail"
+            style="@style/tv_gray_666_12sp"
+            android:layout_below="@id/tv_add_name"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="上海市闵行区1518号" />
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

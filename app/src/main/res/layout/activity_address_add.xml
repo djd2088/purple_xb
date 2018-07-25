@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_gray"
+    tools:context="com.rui.xb.purple.ui.activity.me.address.AddressAddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white_FF"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12">
+
+        <LinearLayout style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:text="收货人" />
+
+            <EditText
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:background="@null"
+                android:hint="输入收货人名"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_200"
+                android:paddingTop="@dimen/dp_10" />
+        </LinearLayout>
+
+        <View style="@style/line_1dp" />
+
+        <LinearLayout style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:text="手机号" />
+
+            <EditText
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:background="@null"
+                android:hint="请输入手机号码"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_200"
+                android:paddingTop="@dimen/dp_10" />
+        </LinearLayout>
+
+        <View style="@style/line_1dp" />
+
+        <RelativeLayout style="@style/ll_rl_52">
+
+            <TextView
+                android:id="@+id/temp_tv_area"
+                style="@style/tv_black_333_14sp"
+                android:text="所在地区" />
+
+            <TextView
+                style="@style/tv_gray_666_14sp"
+                android:layout_marginLeft="@dimen/dp_19"
+                android:layout_toRightOf="@id/temp_tv_area"
+                android:text="上海市 闵行区" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:src="@mipmap/arrow_right" />
+        </RelativeLayout>
+
+        <View style="@style/line_1dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@color/bg_white_FF"
+            android:paddingBottom="@dimen/dp_18"
+            android:paddingRight="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_18">
+
+            <TextView
+                android:id="@+id/temp_add"
+                style="@style/tv_black_333_14sp"
+                android:text="详细地址" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_19"
+                android:layout_toRightOf="@id/temp_add"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="请输入手机号码"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+
+        <View style="@style/line_1dp" />
+
+        <RelativeLayout style="@style/ll_rl_52">
+
+            <TextView
+                style="@style/tv_black_333_14sp"
+                android:text="设为默认地址" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:src="@mipmap/arrow_right" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@color/main"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="保存" />
+
+</android.support.v7.widget.LinearLayoutCompat>

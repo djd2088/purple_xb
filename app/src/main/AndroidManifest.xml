@@ -56,7 +56,12 @@
         <activity android:name=".ui.activity.home.ProductDetailActivity" />
         <activity android:name=".ui.activity.home.OrderDetailActivity" />
         <activity android:name=".ui.activity.home.SearchActivity" />
-        <activity android:name=".zFunctionTest.ui.Test1Activity"></activity>
+        <activity android:name=".zFunctionTest.ui.Test1Activity" />
+        <activity android:name=".ui.activity.me.address.AddressListActivity" />
+        <activity android:name=".ui.activity.me.address.AddressManageActivity" />
+        <activity android:name=".ui.activity.me.address.AddressAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
     </application>
 
 </manifest>

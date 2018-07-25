@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_add_name"
+            style="@style/tv_black_333_14sp"
+            android:text="杜建东" />
+
+        <TextView
+            android:id="@+id/tv_add_phone"
+            style="@style/tv_black_333_14sp"
+            android:layout_alignParentRight="true"
+            android:text="17601333108" />
+
+
+        <TextView
+            android:id="@+id/tv_add_detail"
+            style="@style/tv_gray_666_12sp"
+            android:layout_below="@id/tv_add_name"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="上海市闵行区1518号" />
+
+        <View
+            android:id="@+id/temp_line1"
+            style="@style/line_1dp"
+            android:layout_below="@id/tv_add_detail"
+            android:layout_marginTop="@dimen/dp_8" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_32"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12">
+
+        <LinearLayout
+            android:id="@+id/ll_set_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_set_default"
+                android:layout_width="@dimen/dp_14"
+                android:layout_height="@dimen/dp_14"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/tv_black_333_12sp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="默认地址" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/dp_14"
+                android:layout_height="@dimen/dp_14"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/tv_black_333_12sp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="删除" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/ll_delete"
+            android:layout_marginRight="@dimen/dp_12"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/dp_14"
+                android:layout_height="@dimen/dp_14"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/tv_black_333_12sp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="编辑" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_10dp"/>
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -75,10 +75,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:gravity="center"
+                android:paddingLeft="@dimen/dp_10"
                 android:paddingRight="@dimen/dp_10"
-                android:textColor="@android:color/white"
+                android:textColor="@color/we_chat_black"
                 android:textSize="@dimen/sp_16"
-                android:visibility="visible" />
+                />
 
         </RelativeLayout>
     </LinearLayout>

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 
 import com.google.gson.Gson;
-import com.rui.xb.purple.utils.UrlRoute;
+import com.rui.xb.purple.utils.UrlRouter;
 import com.rui.xb.rui_core.net.rx.IRxRestService;
 
 import java.util.concurrent.TimeUnit;
@@ -52,7 +52,7 @@ public class MainModule {
     @Singleton
     Retrofit initRetrofit(OkHttpClient client) {
         return new Retrofit.Builder()
-                .baseUrl(UrlRoute.BASE_URL)
+                .baseUrl(UrlRouter.BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

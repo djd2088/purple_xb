@@ -13,15 +13,17 @@ import com.rui.xb.purple.ui.activity.home.MasterLifeActivity;
 import com.rui.xb.purple.ui.activity.home.ProductDetailActivity;
 import com.rui.xb.purple.ui.activity.home.RequestRegionActivity;
 import com.rui.xb.purple.ui.activity.home.SearchActivity;
+import com.rui.xb.purple.ui.activity.me.address.AddressAddActivity;
+import com.rui.xb.purple.ui.activity.me.address.AddressListActivity;
 import com.rui.xb.purple.ui.activity.me.AdviceUsActivity;
 import com.rui.xb.purple.ui.activity.me.JoinUsActivity;
+import com.rui.xb.purple.ui.activity.me.address.AddressManageActivity;
 import com.rui.xb.purple.ui.activity.me.MyCollectActivity;
 import com.rui.xb.purple.ui.activity.me.MyDispatchActivity;
 import com.rui.xb.purple.ui.activity.me.MyRequestActivity;
 import com.rui.xb.purple.ui.activity.me.MyTradeActivity;
 import com.rui.xb.purple.ui.activity.me.SetActivity;
 import com.rui.xb.purple.ui.activity.me.SponsorUsActivity;
-import com.rui.xb.purple.zFunctionTest.ui.Test1Activity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -111,9 +113,15 @@ public abstract class ActivityBindingModule {
 
     @ActivityScoped
     @ContributesAndroidInjector
-    abstract Test1Activity test1Activity();
+    abstract AddressListActivity addressListActivity();
 
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract AddressManageActivity addressManageActivity();
 
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract AddressAddActivity addressAddActivity();
 
 
 

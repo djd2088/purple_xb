@@ -44,6 +44,13 @@
         <item name="android:textColor">@color/gray_666</item>
     </style>
 
+    <style name="tv_gray_666_13sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/gray_666</item>
+    </style>
+
     <style name="tv_gray_666_12sp">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -61,10 +68,25 @@
     <!--gray end-->
 
     <!--black begin-->
+
+    <style name="tv_black_333_12sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/black_333</item>
+    </style>
+
     <style name="tv_black_333_14sp">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/black_333</item>
+    </style>
+
+    <style name="tv_black_333_15sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
         <item name="android:textColor">@color/black_333</item>
     </style>
 
@@ -78,6 +100,15 @@
         <item name="android:textColor">@color/red_ff5903</item>
     </style>
 
+    <style name="tv_red_5903_12sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/red_ff5903</item>
+    </style>
+
+
+    <!--red begin-->
 
     <style name="ll_rl_52">
         <item name="android:layout_width">match_parent</item>

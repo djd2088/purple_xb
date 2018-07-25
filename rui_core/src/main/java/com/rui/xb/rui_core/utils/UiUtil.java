@@ -1,5 +1,6 @@
 package com.rui.xb.rui_core.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,4 +24,15 @@ public class UiUtil {
         context.startActivity(intent);
     }
 
+    public static void startForResult(Activity activity,int requestCode,Class target){
+        Intent intent = new Intent(activity,target);
+        activity.startActivityForResult(intent,requestCode);
+    }
+
+    public static void setResult(Activity activity,int resultCode,Bundle data){
+        Intent intent = new Intent();
+        intent.putExtra(ECommon.BUNDLE.name(),data);
+        activity.setResult(resultCode,intent);
+        activity.finish();
+    }
 }

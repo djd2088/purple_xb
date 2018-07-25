@@ -77,6 +77,7 @@
                     android:text="手机 : " />
 
                 <TextView
+                    android:id="@+id/tv_phone"
                     style="@style/tv_gray_666_12sp"
                     android:layout_alignBottom="@id/temp_phone"
                     android:layout_toRightOf="@id/temp_phone"
@@ -202,6 +203,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/tv_buy_manage"
                 style="@style/tv_black_333_14sp"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:text="立即购买/管理"

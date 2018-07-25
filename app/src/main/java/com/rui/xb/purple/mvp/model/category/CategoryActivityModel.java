@@ -1,7 +1,7 @@
 package com.rui.xb.purple.mvp.model.category;
 
 import com.rui.xb.purple.mvp.base.BaseMVPModule;
-import com.rui.xb.purple.utils.UrlRoute;
+import com.rui.xb.purple.utils.UrlRouter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +27,6 @@ public class CategoryActivityModel extends BaseMVPModule {
         Map<String,Object> map = new HashMap<>();
         map.put("parentId",parentId);
         map = encodeByDes(map);
-        return requestByGet(UrlRoute.CATEGORY,map).subscribe(success,fail);
+        return requestByGet(UrlRouter.CATEGORY,map).subscribe(success,fail);
     }
 }
