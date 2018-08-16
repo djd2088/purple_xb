@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
-import com.rui.xb.purple.base.BaseResponseModel;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.home.HomeModel;
 import com.rui.xb.purple.mvp.view.home.HomeView;
@@ -21,8 +21,8 @@ import com.rui.xb.purple.ui.activity.home.GroupBuyingActivity;
 import com.rui.xb.purple.ui.activity.home.MasterLifeActivity;
 import com.rui.xb.purple.ui.activity.home.ProductDetailActivity;
 import com.rui.xb.purple.ui.activity.home.RequestRegionActivity;
-import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.ProductAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.ProductAdapterModel;
 import com.rui.xb.purple.utils.GlideImageLoader;
 import com.rui.xb.rui_core.utils.UiUtil;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -64,6 +64,8 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
 
     private int pageSize = 8;
 
+    private boolean isOver;
+
 
     public void initView() {
         initRvProduct();
@@ -83,7 +85,7 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
         Disposable disposable = mModule.requestProductList(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                 if (model.getCode() == 1) {
                     Map<String, Object> data = (Map<String, Object>) model.getData();
                     List<Map<String, Object>> productList = (List<Map<String, Object>>) data.get
@@ -117,7 +119,7 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
                 Disposable disposable = mModule.requestProductList(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                        BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                         if (model.getCode() == 1) {
                             Map<String, Object> data = (Map<String, Object>) model.getData();
                             List<Map<String, Object>> productList = (List<Map<String, Object>>)
@@ -139,30 +141,32 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
 
             @Override
             public void onLoadMore(@NonNull final RefreshLayout refreshLayout) {
-                pageNo++;
-                Disposable disposable = mModule.requestProductList(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
-                        if (model.getCode() == 1) {
-                            Map<String, Object> data = (Map<String, Object>) model.getData();
-                            if ((boolean) data.get("isOver")){
-                                refreshLayout.setNoMoreData(true);
-                            }else {
-                                List<Map<String, Object>> productList = (List<Map<String, Object>>) data.get("productList");
+                if (!isOver) {
+                    Disposable disposable = mModule.requestProductList(new Consumer<String>() {
+                        @Override
+                        public void accept(String s) throws Exception {
+                            BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity
+                                    .class);
+                            if (model.getCode() == 1) {
+                                Map<String, Object> data = (Map<String, Object>) model.getData();
+                                List<Map<String, Object>> productList = (List<Map<String,
+                                        Object>>) data.get("productList");
                                 dealData(productList);
                                 adapter.notifyDataSetChanged();
+                                isOver = (boolean) data.get("isOver");
                             }
-                            refreshLayout.finishLoadMore();
                         }
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        Log.i(TAG, "accept: " + throwable);
-                    }
-                }, pageNo, pageSize, 1);
-                addDisposable(disposable);
+                    }, new Consumer<Throwable>() {
+                        @Override
+                        public void accept(Throwable throwable) throws Exception {
+                            Log.i(TAG, "accept: " + throwable);
+                        }
+                    }, ++pageNo, pageSize, 1);
+                    addDisposable(disposable);
+                }
+                if (isOver)refreshLayout.setNoMoreData(true);
+                refreshLayout.finishLoadMore();
+
             }
         });
     }
@@ -180,8 +184,8 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 ProductAdapterModel item = (ProductAdapterModel) adapter.getItem(position);
                 Bundle data = new Bundle();
-                data.putString("productId",item.getId().toString());
-                UiUtil.startIntent(mContext, ProductDetailActivity.class,data);
+                data.putString("productId", item.getId().toString());
+                UiUtil.startIntent(mContext, ProductDetailActivity.class, data);
             }
         });
         recyclerView.setAdapter(adapter);
@@ -238,7 +242,7 @@ public class HomePresenter extends BaseMVPPresenter<HomeModel, HomeView> {
             product.setDesc(map.get("productDesc").toString());
             product.setMainPic(map.get("mainPic").toString());
             product.setPrice(map.get("price").toString());
-            product.setBrows(map.get("clickCount").toString().substring(0,map.get("clickCount")
+            product.setBrows(map.get("clickCount").toString().substring(0, map.get("clickCount")
                     .toString().lastIndexOf(".")));
             product.setSchoolName(map.get("schoolName").toString());
             product.setOnlineTime(map.get("onlineTime").toString());

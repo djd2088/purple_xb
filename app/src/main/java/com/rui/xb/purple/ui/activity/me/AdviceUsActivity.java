@@ -13,7 +13,7 @@ public class AdviceUsActivity extends BaseActivity<AdviceUsPresenter> implements
     @Override
     protected void initTitleBar() {
         setTvTitle("意见反馈");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

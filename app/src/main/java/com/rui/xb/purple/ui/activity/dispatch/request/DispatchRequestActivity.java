@@ -11,7 +11,7 @@ public class DispatchRequestActivity extends BaseActivity<RequestPresenter> {
     protected void initTitleBar() {
         setTvTitleAndColor("发布求购",R.color.we_chat_black);
         leftClose();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

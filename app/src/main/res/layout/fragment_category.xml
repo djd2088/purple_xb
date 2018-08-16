@@ -2,27 +2,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:weightSum="4"
+    android:orientation="vertical"
     tools:context="com.rui.xb.purple.ui.fragment.CategoryFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_level_left"
-        android:layout_width="0dp"
+
+    <View
+        style="@style/line_1dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/bg_gray"
-        >
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_level_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/bg_gray_F7"
+            >
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_level_right"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        >
+        </android.support.v7.widget.RecyclerView>
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_level_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
 
 </android.support.v7.widget.LinearLayoutCompat>

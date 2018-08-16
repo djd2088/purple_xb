@@ -2,6 +2,7 @@ package com.rui.xb.purple.ui.activity.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import com.rui.xb.rui_core.app.enums.ECommon;
 import com.rui.xb.rui_core.utils.UiUtil;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> implements
@@ -30,12 +32,12 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
     TextView tvNamePhone;
     @BindView(R.id.tv_add)
     TextView tvAdd;
-    @BindView(R.id.rl_add)
-    RelativeLayout rlAdd;
+//    @BindView(R.id.rl_add)
+//    RelativeLayout rlAdd;
     @BindView(R.id.tv_t_type)
     TextView tvTType;
-    @BindView(R.id.rl_t_type)
-    RelativeLayout rlTType;
+//    @BindView(R.id.rl_t_type)
+//    RelativeLayout rlTType;
     @BindView(R.id.tv_t_fee)
     TextView tvTFee;
     @BindView(R.id.tv_real_pay)
@@ -46,7 +48,7 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
     @Override
     protected void initTitleBar() {
         setTvTitle("订单详情");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 
@@ -80,11 +82,6 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
     }
 
     @Override
-    public RelativeLayout getRlAdd() {
-        return rlAdd;
-    }
-
-    @Override
     public TextView getTvPhoneAndName() {
         return tvNamePhone;
     }
@@ -92,11 +89,6 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
     @Override
     public TextView getTvAdd() {
         return tvAdd;
-    }
-
-    @Override
-    public RelativeLayout getRlTtype() {
-        return rlTType;
     }
 
     @Override
@@ -120,9 +112,17 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
     }
 
 
-    @OnClick(R.id.rl_add)
-    public void onViewClicked() {
-        UiUtil.startForResult(this,1, AddressListActivity.class);
+    @OnClick({R.id.rl_add, R.id.rl_t_type})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.rl_add:
+                UiUtil.startForResult(this, 1, AddressListActivity.class);
+                break;
+            case R.id.rl_t_type:
+                mPresenter.showTransportDialog();
+                break;
+        }
+
     }
 
     @Override
@@ -133,7 +133,7 @@ public class OrderDetailActivity extends BaseActivity<OrderDetailPresenter> impl
             String addId = bundle.getString("addId");
             String nameAndPhone = bundle.getString("nameAndPhone");
             String addDetail = bundle.getString("addDetail");
-            mPresenter.setAddress(addId,nameAndPhone,addDetail);
+            mPresenter.setAddress(addId, nameAndPhone, addDetail);
         }
     }
 }

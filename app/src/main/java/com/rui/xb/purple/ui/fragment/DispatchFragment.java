@@ -32,7 +32,7 @@ public class DispatchFragment extends BaseFragment<DispatchPresenter> implements
     protected void initTitleBar() {
         setTvTitleAndColor("发布", R.color.we_chat_black);
         hideIvLeft();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
 
     }
 

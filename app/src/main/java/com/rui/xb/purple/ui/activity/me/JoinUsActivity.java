@@ -11,7 +11,7 @@ public class JoinUsActivity extends BaseActivity<JoinUsPresenter> implements Joi
     @Override
     protected void initTitleBar() {
         setTvTitle("加入我们");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

@@ -34,7 +34,7 @@ public class TabMyTradeBuyFragment extends BaseFragment<TabMyTradeBuyPresenter> 
     @Override
     protected void initTitleBar() {
         hideTitleBar();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

@@ -7,15 +7,14 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
-import com.rui.xb.purple.base.BaseResponseModel;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.category.CategoryFragmentModel;
 import com.rui.xb.purple.mvp.view.category.CategoryFragmentView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.CategoryLeftAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.CategoryRightAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.CategoryLeftAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.CategoryRightAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
 import com.rui.xb.rui_core.app.Rui;
-import com.rui.xb.rui_core.utils.UiUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +58,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
         mModule.requestSubClass(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                 initLeftAdapter(model);
                 initRightData();
             }
@@ -71,7 +70,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
         },"0");
     }
 
-    private void initLeftAdapter(final BaseResponseModel model) {
+    private void initLeftAdapter(final BaseResponseEntity model) {
         dealData(model,"left");
         categoryLeftAdapter = new CategoryLeftAdapter(R.layout.item_category_left, leftList);
         rvLeft = mView.getRvCategoryLeft();
@@ -89,7 +88,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
                 mModule.requestSubClass(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                        BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                         dealData(model,"right");
                         categoryRightAdapter.setNewData(rightList);
 
@@ -104,7 +103,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
         });
     }
 
-    private void dealData(BaseResponseModel model, String type) {
+    private void dealData(BaseResponseEntity model, String type) {
         if (model.getCode() == 1){
             List<Map<String,Object>> maps = (List<Map<String,Object>>) model.getData();
             for (Map<String,Object> map : maps){
@@ -142,7 +141,7 @@ public class CategoryFragmentPresenter extends BaseMVPPresenter<CategoryFragment
         mModule.requestSubClass(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                 dealData(model,"right");
                 categoryRightAdapter.setNewData(rightList);
 

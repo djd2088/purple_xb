@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:background="@color/white"
+    android:orientation="vertical">
+
     <com.youth.banner.Banner
         android:id="@+id/banner_home"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_80"
+        android:layout_height="@dimen/dp_90"
         android:orientation="horizontal"
         android:weightSum="3">
 
@@ -30,17 +31,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/home_icon1" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/index_zxzx" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
-                android:text="求购专区"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_10" />
+                android:text="@string/request_region"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/sp_12" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,17 +53,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/home_icon2" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/sqys_icon2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
-                android:text="考研人生"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_10" />
+                android:text="@string/master_life"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/sp_12" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,17 +75,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/home_icon3" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/my_integral" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
-                android:text="集中采购"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_10" />
+                android:text="@string/focus_purchase"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/sp_12" />
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.LinearLayoutCompat>

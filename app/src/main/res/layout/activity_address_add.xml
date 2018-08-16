@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_gray_F7"
     android:orientation="vertical"
-    android:background="@color/bg_gray"
     tools:context="com.rui.xb.purple.ui.activity.me.address.AddressAddActivity">
+
+    <View
+        style="@style/line_1dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,15 +22,16 @@
 
             <TextView
                 style="@style/tv_black_333_14sp"
-                android:text="收货人" />
+                android:text="@string/receiver" />
 
             <EditText
+                android:id="@+id/et_receive_name"
                 style="@style/tv_gray_666_14sp"
                 android:layout_marginLeft="@dimen/dp_32"
                 android:background="@null"
-                android:hint="输入收货人名"
+                android:hint="@string/edit_receiver_name"
                 android:paddingBottom="@dimen/dp_10"
-                android:paddingRight="@dimen/dp_200"
+                android:paddingRight="@dimen/dp_150"
                 android:paddingTop="@dimen/dp_10" />
         </LinearLayout>
 
@@ -37,13 +41,14 @@
 
             <TextView
                 style="@style/tv_black_333_14sp"
-                android:text="手机号" />
+                android:text="@string/phone_number" />
 
             <EditText
+                android:id="@+id/et_phone"
                 style="@style/tv_gray_666_14sp"
                 android:layout_marginLeft="@dimen/dp_32"
                 android:background="@null"
-                android:hint="请输入手机号码"
+                android:hint="@string/edit_phone"
                 android:paddingBottom="@dimen/dp_10"
                 android:paddingRight="@dimen/dp_200"
                 android:paddingTop="@dimen/dp_10" />
@@ -56,9 +61,10 @@
             <TextView
                 android:id="@+id/temp_tv_area"
                 style="@style/tv_black_333_14sp"
-                android:text="所在地区" />
+                android:text="@string/address_region" />
 
             <TextView
+                android:id="@+id/tv_province"
                 style="@style/tv_gray_666_14sp"
                 android:layout_marginLeft="@dimen/dp_19"
                 android:layout_toRightOf="@id/temp_tv_area"
@@ -85,16 +91,17 @@
             <TextView
                 android:id="@+id/temp_add"
                 style="@style/tv_black_333_14sp"
-                android:text="详细地址" />
+                android:text="@string/address_detail" />
 
             <EditText
+                android:id="@+id/et_location"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_19"
                 android:layout_toRightOf="@id/temp_add"
                 android:background="@null"
                 android:gravity="top"
-                android:hint="请输入手机号码"
+                android:hint="@string/edit_address_detail"
                 android:textSize="@dimen/sp_14" />
         </RelativeLayout>
 
@@ -104,24 +111,28 @@
 
             <TextView
                 style="@style/tv_black_333_14sp"
-                android:text="设为默认地址" />
+                android:text="@string/set_default_address" />
 
-            <ImageView
-                android:layout_width="@dimen/dp_18"
-                android:layout_height="@dimen/dp_18"
+            <ToggleButton
+                android:id="@+id/tg_btn_set_default"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/dp_20"
-                android:src="@mipmap/arrow_right" />
+                android:background="@drawable/toggle_choose_selector"
+                android:textOff="@null"
+                android:textOn="@null" />
         </RelativeLayout>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_save"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_52"
         android:layout_margin="@dimen/dp_20"
         android:background="@color/main"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:text="保存" />
+        android:text="@string/save"
+        android:textColor="@color/white" />
 
 </android.support.v7.widget.LinearLayoutCompat>

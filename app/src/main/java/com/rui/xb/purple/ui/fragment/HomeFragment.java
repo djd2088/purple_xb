@@ -9,6 +9,7 @@ import com.rui.xb.purple.base.BaseFragment;
 import com.rui.xb.purple.mvp.presenter.home.HomePresenter;
 import com.rui.xb.purple.mvp.view.home.HomeView;
 import com.rui.xb.purple.ui.activity.home.SearchActivity;
+import com.rui.xb.purple.zFunctionTest.ui.WebViewActivity;
 import com.rui.xb.rui_core.utils.UiUtil;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
@@ -38,7 +39,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         setLlTitleBgDrawable(R.drawable.status_bar_background);
         setTvTitle("");
         showTvLeft("上海大学", R.color.white, 0);
-        setIvLeftRes(R.mipmap.password_hidden);
+        setIvLeftRes(R.mipmap.registered_phone);
     }
 
     @Override

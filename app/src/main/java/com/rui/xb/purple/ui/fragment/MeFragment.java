@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.base.BaseFragment;
+import com.rui.xb.purple.base.BaseNoTitleFragment;
 import com.rui.xb.purple.mvp.presenter.me.MePresenter;
 import com.rui.xb.purple.mvp.view.me.MeView;
 import com.rui.xb.purple.ui.activity.me.AdviceUsActivity;
@@ -25,11 +26,12 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
+import qiu.niorgai.StatusBarCompat;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MeFragment extends BaseFragment<MePresenter> implements MeView {
+public class MeFragment extends BaseNoTitleFragment<MePresenter> implements MeView {
 
     @BindView(R.id.iv_avatar)
     CircleImageView ivAvatar;
@@ -42,12 +44,12 @@ public class MeFragment extends BaseFragment<MePresenter> implements MeView {
     public MeFragment() {
     }
 
-    @Override
-    protected void initTitleBar() {
-        setTvTitle("我的");
-        hideIvLeft();
-        transparentStatusBar(true);
-    }
+//    @Override
+//    protected void initTitleBar() {
+////        setTvTitleAndColor("我的", R.color.white);
+////        hideIvLeft();
+////        setLlTitleBgDrawable(R.drawable.status_bar_background);
+//    }
 
     @Override
     protected int initMainView() {
@@ -56,17 +58,16 @@ public class MeFragment extends BaseFragment<MePresenter> implements MeView {
 
     @Override
     protected void initDataAndView() {
-
     }
 
 
-//    , R.id.rl_join
+    //    , R.id.rl_join
     @OnClick({R.id.rl_person_info, R.id.ll_dispatch, R.id.ll_request, R.id.ll_collect, R.id
             .ll_trade, R.id.rl_sponsor, R.id.rl_advice, R.id.rl_set})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_person_info:
-                Toast.makeText(getActivity(),"1",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ll_dispatch:
                 UiUtil.startIntent(getActivity(), MyDispatchActivity.class);

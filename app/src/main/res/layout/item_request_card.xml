@@ -68,7 +68,7 @@
 
         <TextView
             android:id="@+id/tv_desire_price"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBottom="@id/temp_desire_price"
             android:layout_toRightOf="@id/temp_desire_price"
             android:text="18" />
@@ -91,14 +91,14 @@
 
         <TextView
             android:id="@+id/tv_phone"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBottom="@id/temp_phone"
             android:layout_toRightOf="@id/temp_phone"
             android:text="17601333108" />
 
         <TextView
             android:id="@+id/tv_qq"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBottom="@id/temp_phone"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/dp_20"
@@ -120,7 +120,7 @@
 
         <TextView
             android:id="@+id/tv_wx"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBottom="@id/temp_wx"
             android:layout_toRightOf="@id/temp_wx"
             android:text="137714205" />

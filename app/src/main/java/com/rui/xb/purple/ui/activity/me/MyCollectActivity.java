@@ -35,14 +35,14 @@ public class MyCollectActivity extends BaseActivity<MyCollectPresenter> implemen
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private int[] mIconUnselectIds = {
-            R.mipmap.tab_class, R.mipmap.tab_home};
+            R.mipmap.ic_launcher, R.mipmap.ic_launcher};
     private int[] mIconSelectIds = {
-            R.mipmap.tab_class_hover, R.mipmap.tab_home_hover};
+            R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
     @Override
     protected void initTitleBar() {
         setTvTitle("我的收藏");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

@@ -50,7 +50,7 @@ public class TabMasterRegionFragment extends BaseFragment<TabMasterRegionPresent
     @Override
     protected void initTitleBar() {
         hideTitleBar();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

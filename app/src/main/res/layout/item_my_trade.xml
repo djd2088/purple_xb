@@ -25,7 +25,7 @@
 
         <TextView
             android:id="@+id/tv_price"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignParentRight="true"
             android:text="￥ : 200"
             android:layout_marginRight="@dimen/dp_20"/>

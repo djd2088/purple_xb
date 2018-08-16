@@ -2,7 +2,6 @@ package com.rui.xb.purple.mvp.presenter.me;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,25 +9,25 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
+import com.rui.xb.purple.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.me.MyDispatchModel;
 import com.rui.xb.purple.mvp.model.me.MyRequestModel;
-import com.rui.xb.purple.mvp.view.me.MyDispatchView;
 import com.rui.xb.purple.mvp.view.me.MyRequestView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyDispatchAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyRequestAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.MyRequestAdapterModel;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.MyRequestAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.MyRequestAdapterModel;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
-import static android.widget.LinearLayout.VERTICAL;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by Rui on 2018/7/14.
@@ -43,6 +42,12 @@ public class MyRequestPresenter extends BaseMVPPresenter<MyRequestModel,MyReques
     private SmartRefreshLayout mRefreshLayout;
     private RecyclerView mRecyclerView;
     private MyRequestAdapter mAdapter;
+    private List<MyRequestAdapterModel> listModels = new ArrayList<>();
+    private int pageNo = 1;
+    private int pageSize = 10;
+    private boolean isOver;
+    @Inject
+    MyDispatchModel myDispatchModel;
 
     public void initView() {
 
@@ -51,24 +56,35 @@ public class MyRequestPresenter extends BaseMVPPresenter<MyRequestModel,MyReques
 
         List<MyRequestAdapterModel> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            MyRequestAdapterModel model = new MyRequestAdapterModel();
-            model.setTitle("求购标题" + i);
-            model.setDesc("求购描述" + i);
-            model.setRequesterName("求购者name" + i);
-            model.setDesirePrice("价格" + i);
-            model.setTime("2018-02-19 20:19:22");
-            model.setPhone("phone" + i);
-            model.setQq("qq" + i);
-            model.setWx("wx" + i);
-            model.setSchoolName("大学" + i);
-            list.add(model);
+
         }
-        initAdapter(list);
+        initAdapter();
     }
 
-    private void initAdapter(List<MyRequestAdapterModel> list) {
-        mAdapter = new MyRequestAdapter(R.layout.item_request_card, list);
+    private void initAdapter() {
+        mAdapter = new MyRequestAdapter(R.layout.item_request_card, listModels);
         mRecyclerView.setAdapter(mAdapter);
+
+        myDispatchModel.requestMyDispatch(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                BaseResponseEntity response = gsonSingle.fromJson(s,BaseResponseEntity.class);
+                if (response.getCode() == 1){
+                    Map<String, Object> data = (Map<String, Object>) response.getData();
+                    List<Map<String, Object>> productList = (List<Map<String, Object>>) data.get
+                            ("productList");
+                    dealData(productList);
+                    mAdapter.notifyDataSetChanged();
+                    isOver = (boolean) data.get("isOver");
+                }
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+
+            }
+        },2,pageNo,pageSize);
+
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -93,6 +109,24 @@ public class MyRequestPresenter extends BaseMVPPresenter<MyRequestModel,MyReques
 //            }
 //        });
 
+    }
+
+    private void dealData(List<Map<String, Object>> productList) {
+        for (Map<String,Object> map : productList){
+            MyRequestAdapterModel model = new MyRequestAdapterModel();
+            model.setTitle(map.get("productName").toString());
+            model.setDesc(map.get("productDesc").toString());
+            model.setSchoolName(map.get("schoolName").toString());
+            model.setDesirePrice(map.get("price").toString());
+            model.setTime(map.get("onlineTime").toString());
+            ProductAdapterModel.UserInfo userInfo = gsonSingle.fromJson(map.get("sellerInfo")
+                    .toString(), ProductAdapterModel.UserInfo.class);
+            model.setRequesterName(userInfo.getNickname());
+            model.setPhone(userInfo.getPhone());
+            model.setQq(userInfo.getQq());
+            model.setWx(userInfo.getWechat());
+            listModels.add(model);
+        }
     }
 
 

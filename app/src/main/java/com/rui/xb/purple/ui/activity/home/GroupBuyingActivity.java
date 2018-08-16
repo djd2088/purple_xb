@@ -11,7 +11,7 @@ public class GroupBuyingActivity extends BaseActivity<GroupBuyingPresenter> impl
     @Override
     protected void initTitleBar() {
         setTvTitle("集中采购");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

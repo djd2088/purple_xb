@@ -29,9 +29,9 @@ public class MessageFragment extends BaseFragment<MessagePresenter> implements M
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private int[] mIconUnselectIds = {
-            R.mipmap.tab_class, R.mipmap.tab_home};
+            R.mipmap.ic_launcher, R.mipmap.ic_launcher};
     private int[] mIconSelectIds = {
-            R.mipmap.tab_class_hover, R.mipmap.tab_home_hover};
+            R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
     @Inject
     public MessageFragment() {
@@ -43,7 +43,7 @@ public class MessageFragment extends BaseFragment<MessagePresenter> implements M
     protected void initTitleBar() {
         setTvTitle("消息");
         hideIvLeft();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

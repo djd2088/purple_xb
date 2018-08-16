@@ -17,20 +17,19 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_44">
+            android:layout_height="@dimen/dp_tool_bar_48dp">
 
             <ImageView
                 android:id="@+id/iv_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:contentDescription="@null"
                 android:paddingBottom="@dimen/dp_10"
-                android:paddingLeft="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_12"
                 android:paddingTop="@dimen/dp_10"
-                android:src="@mipmap/returnbg"
+                android:src="@mipmap/arrow_left"
                 android:visibility="visible" />
 
             <TextView
@@ -39,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/iv_left"
-                android:textSize="@dimen/sp_11"
+                android:textColor="@color/tool_bar_tv_main"
+                android:textSize="@dimen/sp_tool_bar_main_size_15sp"
                 android:visibility="gone" />
 
             <TextView
@@ -51,19 +51,19 @@
                 android:layout_marginRight="@dimen/dp_50"
                 android:gravity="center"
                 android:text="我的标题"
-                android:textColor="@color/we_chat_black"
-                android:textSize="@dimen/sp_17"
+                android:textColor="@color/tool_bar_tv_main"
+                android:textSize="@dimen/sp_tool_bar_main_size_17sp"
                 android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/iv_right"
-                android:layout_width="@dimen/dp_44"
-                android:layout_height="@dimen/dp_44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:contentDescription="@null"
-                android:padding="@dimen/dp_13"
+                android:padding="@dimen/dp_12"
                 android:src="@mipmap/arrow_right"
                 android:visibility="gone" />
 
@@ -72,14 +72,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:gravity="center"
                 android:paddingLeft="@dimen/dp_10"
                 android:paddingRight="@dimen/dp_10"
-                android:textColor="@color/we_chat_black"
-                android:textSize="@dimen/sp_16"
-                />
+                android:textColor="@color/tool_bar_tv_main"
+                android:textSize="@dimen/sp_tool_bar_main_size_15sp" />
 
         </RelativeLayout>
     </LinearLayout>

@@ -48,8 +48,11 @@ public class WebViewActivity extends WebViewBaseActivity {
         mWebView = (BridgeWebView) getWebview();
         webContainer.addView(mWebView);
 
-        //mWebView.loadUrl("http://10.1.64.184:8899/dist/first.html");
-        mWebView.loadUrl("file:///android_asset/first.html");
+//        mWebView.loadUrl("http://10.1.64.184:8899/dist/first.html");
+//        mWebView.loadUrl("http://106.12.14.169:8080/pic/PDF_T.pdf");
+
+//        mWebView.loadUrl("file:///android_asset/first.html");
+                mWebView.loadUrl("file:///android_asset/PDF_T.pdf");
         initData();
     }
 

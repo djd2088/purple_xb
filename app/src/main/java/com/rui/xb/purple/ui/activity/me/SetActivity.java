@@ -11,7 +11,7 @@ public class SetActivity extends BaseActivity<SetPresenter> implements SetView {
     @Override
     protected void initTitleBar() {
         setTvTitle("系统设置");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

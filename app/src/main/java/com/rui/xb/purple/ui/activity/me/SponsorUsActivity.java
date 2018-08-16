@@ -11,7 +11,7 @@ public class SponsorUsActivity extends BaseActivity<SponsorUsPresenter> implemen
     @Override
     protected void initTitleBar() {
         setTvTitle("赞助我们");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

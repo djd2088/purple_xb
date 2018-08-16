@@ -7,14 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.rui.xb.purple.ui.fragment.MeFragment">
+        android:fitsSystemWindows="true"
+        android:background="@drawable/status_bar_background">
 
         <RelativeLayout
             android:id="@+id/rl_person_info"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_84"
             android:background="@drawable/status_bar_background"
-            android:paddingLeft="@dimen/dp_14">
+            >
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_avatar"
@@ -22,7 +23,8 @@
                 android:layout_height="@dimen/dp_60"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/head_portrait"
+                android:layout_marginLeft="@dimen/dp_14"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -101,7 +103,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp_40"
                         android:layout_height="@dimen/dp_40"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/sqys_icon3" />
 
                     <TextView
                         style="@style/tv_gray_666_12sp"
@@ -121,7 +123,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp_40"
                         android:layout_height="@dimen/dp_40"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/sqys_icon1" />
 
                     <TextView
                         style="@style/tv_gray_666_12sp"
@@ -142,7 +144,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp_40"
                         android:layout_height="@dimen/dp_40"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/my_collection" />
 
                     <TextView
                         style="@style/tv_gray_666_12sp"
@@ -162,7 +164,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp_40"
                         android:layout_height="@dimen/dp_40"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/my_order" />
 
                     <TextView
                         style="@style/tv_gray_666_12sp"
@@ -185,10 +187,10 @@
 
             <ImageView
                 android:id="@+id/iv_tmep1"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/o2_index_home_green" />
 
             <TextView
                 style="@style/tv_gray_666_12sp"
@@ -208,8 +210,7 @@
 
         <View
             style="@style/line_1dp"
-            android:layout_marginLeft="@dimen/dp_14"
-            android:layout_marginRight="@dimen/dp_14" />
+           />
 
         <!--<RelativeLayout-->
             <!--android:id="@+id/rl_join"-->
@@ -251,10 +252,10 @@
 
             <ImageView
                 android:id="@+id/iv_tmep3"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/o2_index_home_green" />
 
             <TextView
                 style="@style/tv_gray_666_12sp"
@@ -274,8 +275,7 @@
 
         <View
             style="@style/line_1dp"
-            android:layout_marginLeft="@dimen/dp_14"
-            android:layout_marginRight="@dimen/dp_14" />
+             />
 
         <RelativeLayout
             android:id="@+id/rl_set"
@@ -284,10 +284,10 @@
 
             <ImageView
                 android:id="@+id/iv_tmep4"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/o2_index_home_green" />
 
             <TextView
 

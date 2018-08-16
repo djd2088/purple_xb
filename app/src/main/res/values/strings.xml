@@ -5,10 +5,44 @@
 
     <!-- 首页 -->
     <string name="search">搜索</string>
-
+    <string name="request_region">求购专区</string>
+    <string name="master_life">考研人生</string>
+    <string name="focus_purchase">集中采购</string>
     <string name="price">￥:</string>
     <string name="brows">浏览:</string>
+    <string name="cancel">取消</string>
 
+    <!--商品详情-->
+    <string name="phone">手机 : </string>
+    <string name="qq">QQ : </string>
+    <string name="wx">微信 : </string>
+    <string name="collect">收藏</string>
+    <string name="consult">咨询</string>
+
+    <!--订单详情-->
+    <string name="receive_address">收货地址</string>
+    <string name="dispatch_method">配送方式</string>
+    <string name="freight">运费</string>
+    <string name="real_pay">实付款 : </string>
+    <string name="make_sure">确认</string>
+    <string name="by_self">自提</string>
+    <string name="pay_online">线上支付</string>
+    
+    <!--收货地址-->
+    <string name="receiver">收货人</string>
+    <string name="edit_receiver_name">请输入收货人姓名</string>
+    <string name="phone_number">手机号</string>
+    <string name="edit_phone">请输入手机号码</string>
+    <string name="address_region">所在地区</string>
+    <string name="address_detail">详细地址</string>
+    <string name="edit_address_detail">请输入详细地址</string>
+    <string name="set_default_address">设为默认地址</string>
+    <string name="save">保存</string>
+
+    <!--收货地址Item-->
+    <string name="default_address">默认地址</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
 
     <!--发布-->
     <string name="upload_pic">上传照片</string>

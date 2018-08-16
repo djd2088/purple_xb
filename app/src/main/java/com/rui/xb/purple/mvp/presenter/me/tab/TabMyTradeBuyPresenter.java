@@ -9,27 +9,30 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.me.tab.TabMyTradeBuyModel;
 import com.rui.xb.purple.mvp.view.me.tab.TabMyTradeBuyView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyCollectIdleAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyTradeBuyAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.MyTradeBuyAdapterModel;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.MyTradeBuyAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.MyTradeBuyAdapterModel;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
+
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by Rui on 2018/7/18.
  */
 
-public class TabMyTradeBuyPresenter extends BaseMVPPresenter<TabMyTradeBuyModel,TabMyTradeBuyView> {
+public class TabMyTradeBuyPresenter extends BaseMVPPresenter<TabMyTradeBuyModel,
+        TabMyTradeBuyView> {
 
     @Inject
     public TabMyTradeBuyPresenter() {
@@ -38,6 +41,9 @@ public class TabMyTradeBuyPresenter extends BaseMVPPresenter<TabMyTradeBuyModel,
     private SmartRefreshLayout mRefreshLayout;
     private RecyclerView mRecyclerView;
     private MyTradeBuyAdapter mAdapter;
+    private List<MyTradeBuyAdapterModel> listModels = new ArrayList<>();
+    private int pageNo = 1;
+    private int pageSize = 10;
 
     public void initView() {
 
@@ -57,14 +63,45 @@ public class TabMyTradeBuyPresenter extends BaseMVPPresenter<TabMyTradeBuyModel,
     }
 
     private void initAdapter(List<MyTradeBuyAdapterModel> list) {
-        mAdapter = new MyTradeBuyAdapter(R.layout.item_my_trade, list);
+        mAdapter = new MyTradeBuyAdapter(R.layout.item_my_trade, listModels);
         mRecyclerView.setAdapter(mAdapter);
+
+        mModule.requestOrderList(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                BaseResponseEntity response = gsonSingle.fromJson(s, BaseResponseEntity.class);
+                if (response.getCode() == 1) {
+                    Map<String, Object> data = (Map<String, Object>) response.getData();
+                    List<Map<String, Object>> orderList = (List<Map<String, Object>>) data.get
+                            ("orderList");
+                    for (Map<String, Object> map : orderList) {
+                        MyTradeBuyAdapterModel model = new MyTradeBuyAdapterModel();
+                        model.setId(map.get("id").toString());
+                        model.setOrderState(map.get("state").toString());
+                        model.setPrice(map.get("orderAmount").toString());
+                        Map<String, Object> item = ((List<Map<String, Object>>) map.get("items"))
+                                .get(0);
+                        model.setMainPic(item.get("mainPic").toString());
+                        model.setProductName(item.get("productName").toString());
+                        listModels.add(model);
+                    }
+                    mAdapter.notifyDataSetChanged();
+                }
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+
+            }
+        }, 1, pageNo, pageSize);
+
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Toast.makeText(mContext, position + "", Toast.LENGTH_SHORT).show();
             }
         });
+
 
 //        mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
 //            @Override

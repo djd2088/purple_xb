@@ -35,7 +35,7 @@ public class CategoryFragment extends BaseFragment<CategoryFragmentPresenter> im
     protected void initTitleBar() {
         setTvTitleAndColor("分类", R.color.we_chat_black);
         hideIvLeft();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

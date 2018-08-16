@@ -18,13 +18,9 @@ public interface OrderDetailView extends BaseMVPView {
 
     TextView getProPrice();
 
-    RelativeLayout getRlAdd();
-
     TextView getTvPhoneAndName();
 
     TextView getTvAdd();
-
-    RelativeLayout getRlTtype();
 
     TextView getTvTtype();
 

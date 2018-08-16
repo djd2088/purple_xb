@@ -24,7 +24,7 @@ public class MyDispatchActivity extends BaseActivity<MyDispatchPresenter> implem
     @Override
     protected void initTitleBar() {
         setTvTitle("我的发布");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
 
     }

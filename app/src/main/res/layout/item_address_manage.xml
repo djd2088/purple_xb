@@ -15,13 +15,13 @@
         <TextView
             android:id="@+id/tv_add_name"
             style="@style/tv_black_333_14sp"
-            android:text="杜建东" />
+            />
 
         <TextView
             android:id="@+id/tv_add_phone"
             style="@style/tv_black_333_14sp"
             android:layout_alignParentRight="true"
-            android:text="17601333108" />
+             />
 
 
         <TextView
@@ -29,7 +29,7 @@
             style="@style/tv_gray_666_12sp"
             android:layout_below="@id/tv_add_name"
             android:layout_marginTop="@dimen/dp_5"
-            android:text="上海市闵行区1518号" />
+             />
 
         <View
             android:id="@+id/temp_line1"
@@ -56,12 +56,12 @@
                 android:id="@+id/iv_set_default"
                 android:layout_width="@dimen/dp_14"
                 android:layout_height="@dimen/dp_14"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/selected_no" />
 
             <TextView
                 style="@style/tv_black_333_12sp"
                 android:layout_marginLeft="@dimen/dp_5"
-                android:text="默认地址" />
+                android:text="@string/default_address" />
         </LinearLayout>
 
 
@@ -75,12 +75,12 @@
             <ImageView
                 android:layout_width="@dimen/dp_14"
                 android:layout_height="@dimen/dp_14"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/delete" />
 
             <TextView
                 style="@style/tv_black_333_12sp"
                 android:layout_marginLeft="@dimen/dp_5"
-                android:text="删除" />
+                android:text="@string/delete" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,12 +94,12 @@
             <ImageView
                 android:layout_width="@dimen/dp_14"
                 android:layout_height="@dimen/dp_14"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/index_record_green" />
 
             <TextView
                 style="@style/tv_black_333_12sp"
                 android:layout_marginLeft="@dimen/dp_5"
-                android:text="编辑" />
+                android:text="@string/edit" />
         </LinearLayout>
 
     </RelativeLayout>

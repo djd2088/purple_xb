@@ -19,7 +19,7 @@ public class DispatchIdleActivity extends BaseActivity<IdlePresenter> implements
     @Override
     protected void initTitleBar() {
         setTvTitleAndColor("发布闲置", R.color.we_chat_black);
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

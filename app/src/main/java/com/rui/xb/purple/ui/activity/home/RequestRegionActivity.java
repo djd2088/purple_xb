@@ -27,7 +27,7 @@ public class RequestRegionActivity extends BaseActivity<RequestRegionPresenter> 
     @Override
     protected void initTitleBar() {
         setTvTitle("求购专区");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

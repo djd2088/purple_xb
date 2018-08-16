@@ -9,22 +9,23 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.me.tab.TabMyCollectIdleModel;
 import com.rui.xb.purple.mvp.view.me.tab.TabMyCollectIdleView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyCollectIdleAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyRequestAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.MyRequestAdapterModel;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.MyCollectIdleAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.ProductAdapterModel;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
+
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by Rui on 2018/7/17.
@@ -40,29 +41,41 @@ public class TabMyCollectIdlePresenter extends BaseMVPPresenter<TabMyCollectIdle
     private SmartRefreshLayout mRefreshLayout;
     private RecyclerView mRecyclerView;
     private MyCollectIdleAdapter mAdapter;
+    private List<ProductAdapterModel> listModels = new ArrayList<>();
+    private int pageNo = 1;
+    private int pageSize = 10;
 
     public void initView() {
 
         initRefreshLayout();
         initRecyclerView();
-
-        List<ProductAdapterModel> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            ProductAdapterModel model = new ProductAdapterModel();
-            model.setProductName("商品标题" + i);
-            model.setDesc("求购描述" + i);
-//            model.setMainPic("主图" + i);
-            model.setPrice("价格" + i);
-            model.setSellerName("卖家nmae" + i);
-            model.setSchoolName("大学" + i);
-            list.add(model);
-        }
-        initAdapter(list);
+        initAdapter();
     }
 
-    private void initAdapter(List<ProductAdapterModel> list) {
-        mAdapter = new MyCollectIdleAdapter(R.layout.item_my_collect_idle, list);
+    private void initAdapter() {
+        mAdapter = new MyCollectIdleAdapter(R.layout.item_my_collect_idle, listModels);
         mRecyclerView.setAdapter(mAdapter);
+
+        mModule.requestCollectIdle(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                BaseResponseEntity model = gsonSingle.fromJson(s,BaseResponseEntity.class);
+                if (model.getCode() == 1){
+                    Map<String, Object> data = (Map<String, Object>) model.getData();
+                    List<Map<String, Object>> collectList = (List<Map<String, Object>>) data.get
+                            ("collectList");
+                    dealData(collectList);
+                    mAdapter.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(mContext,model.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+
+            }
+        },pageNo,pageSize,1);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -87,6 +100,23 @@ public class TabMyCollectIdlePresenter extends BaseMVPPresenter<TabMyCollectIdle
 //            }
 //        });
 
+    }
+
+    private void dealData(List<Map<String, Object>> collectList) {
+        for (Map<String,Object> map : collectList){
+            ProductAdapterModel collect = new ProductAdapterModel();
+            collect.setProductName(map.get("productName").toString());
+            collect.setDesc(map.get("productDesc").toString());
+            collect.setPrice(map.get("price").toString());
+            collect.setPictures(null);
+            collect.setSchoolName(map.get("schoolName").toString());
+            ProductAdapterModel.UserInfo userInfo = new ProductAdapterModel.UserInfo();
+            Map<String,Object> userMap = (Map<String, Object>) map.get("sellerInfo");
+            userInfo.setNickname(userMap.get("nickname").toString());
+            userInfo.setAvatar(userMap.get("avatar").toString());
+            collect.setUserInfo(userInfo);
+            listModels.add(collect);
+        }
     }
 
 

@@ -23,7 +23,7 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
     protected void initTitleBar() {
         setTvTitle("选择收货地址");
         showTvRightSetText("管理");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
 
 
@@ -37,7 +37,6 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
     @Override
     protected void initDataAndView() {
         mPresenter.onAttachView(this, this);
-        mPresenter.initView(this);
 
         getTvRight().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +53,12 @@ public class AddressListActivity extends BaseActivity<AddressListPresenter> impl
 
     @OnClick(R.id.ll_add_new)
     public void onViewClicked() {
-        UiUtil.startIntent(AddressListActivity.this,AddressAddActivity.class);
+        UiUtil.startIntent(AddressListActivity.this, AddressAddActivity.class);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.initView(this);
     }
 }

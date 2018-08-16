@@ -8,13 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.rui.xb.purple.R;
-import com.rui.xb.purple.base.BaseResponseModel;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.category.CategoryActivityModel;
 import com.rui.xb.purple.mvp.view.category.CategoryActivityView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.ProductAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.CategoryLeftRightAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.model.ProductAdapterModel;
 import com.rui.xb.purple.ui.tablayout.SimplePageAdapter;
 import com.rui.xb.purple.ui.fragment.tablayout.TabLayoutFragment;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -77,7 +77,7 @@ public class CategoryActivityPresenter extends BaseMVPPresenter<CategoryActivity
         Disposable disposable = mModule.requestSubClass(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                BaseResponseModel model = gsonSingle.fromJson(s, BaseResponseModel.class);
+                BaseResponseEntity model = gsonSingle.fromJson(s, BaseResponseEntity.class);
                 dealData(model);
 
             }
@@ -90,7 +90,7 @@ public class CategoryActivityPresenter extends BaseMVPPresenter<CategoryActivity
         addDisposable(disposable);
     }
 
-    private void dealData(BaseResponseModel model) {
+    private void dealData(BaseResponseEntity model) {
         if (model.getCode() == 1) {
             List<Map<String, Object>> maps = (List<Map<String, Object>>) model.getData();
             mTitles = new String[maps.size()];

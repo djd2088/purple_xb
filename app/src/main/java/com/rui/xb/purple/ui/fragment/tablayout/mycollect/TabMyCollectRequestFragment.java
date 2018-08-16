@@ -35,7 +35,7 @@ public class TabMyCollectRequestFragment extends BaseFragment<TabMyCollectReques
     @Override
     protected void initTitleBar() {
         hideTitleBar();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

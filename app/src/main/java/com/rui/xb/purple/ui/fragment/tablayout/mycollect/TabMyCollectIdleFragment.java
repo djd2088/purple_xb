@@ -35,7 +35,7 @@ public class TabMyCollectIdleFragment extends BaseFragment<TabMyCollectIdlePrese
     @Override
     protected void initTitleBar() {
         hideTitleBar();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

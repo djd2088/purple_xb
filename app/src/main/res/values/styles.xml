@@ -76,6 +76,13 @@
         <item name="android:textColor">@color/black_333</item>
     </style>
 
+    <style name="tv_black_333_13sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/black_333</item>
+    </style>
+
     <style name="tv_black_333_14sp">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -90,21 +97,36 @@
         <item name="android:textColor">@color/black_333</item>
     </style>
 
+    <style name="tv_black_333_16sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/black_333</item>
+    </style>
+
     <!--black end-->
 
     <!--red begin-->
-    <style name="tv_red_5903_14sp">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/sp_14</item>
-        <item name="android:textColor">@color/red_ff5903</item>
-    </style>
 
-    <style name="tv_red_5903_12sp">
+    <style name="tv_red_fb4b4b_12sp">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/sp_12</item>
-        <item name="android:textColor">@color/red_ff5903</item>
+        <item name="android:textColor">@color/red_fb4b4b</item>
+    </style>
+
+    <style name="tv_red_fb4b4b_13sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/red_fb4b4b</item>
+    </style>
+
+    <style name="tv_red_fb4b4b_14sp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/red_fb4b4b</item>
     </style>
 
 

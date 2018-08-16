@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.rui.xb.purple.R;
-import com.rui.xb.purple.base.BaseResponseModel;
+import com.rui.xb.purple.base.BaseResponseEntity;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
 import com.rui.xb.purple.mvp.model.home.ProductDetailModel;
 import com.rui.xb.purple.mvp.view.home.ProductDetailView;
 import com.rui.xb.purple.ui.activity.home.OrderDetailActivity;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
+import com.rui.xb.purple.adapter.recycle_listview.model.ProductAdapterModel;
 import com.rui.xb.purple.utils.GlideImageLoader;
 import com.rui.xb.rui_core.utils.UiUtil;
 import com.youth.banner.Banner;
@@ -50,7 +50,7 @@ public class ProductDetailPresenter extends BaseMVPPresenter<ProductDetailModel,
         mModule.requestProductDetail(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                BaseResponseModel result = gsonSingle.fromJson(s, BaseResponseModel.class);
+                BaseResponseEntity result = gsonSingle.fromJson(s, BaseResponseEntity.class);
                 if (result.getCode() == 1){
                     Map<String,Object> data = (Map<String, Object>) result.getData();
                     dealData(product, data);
@@ -67,11 +67,16 @@ public class ProductDetailPresenter extends BaseMVPPresenter<ProductDetailModel,
     }
 
     private void initUi() {
-        mView.getTvSellerNick().setText(product.getUserInfo().getNickName());
+        mView.getTvSellerNick().setText(product.getUserInfo().getNickname());
         mView.getTvSchoolName().setText(product.getUserInfo().getSchoolName());
         mView.getTvPhone().setText(product.getUserInfo().getPhone());
         mView.getTvQq().setText(product.getUserInfo().getQq());
         mView.getTvWechat().setText(product.getUserInfo().getWechat());
+        mView.getTvPrice().setText(String.format("￥ : %1s",product.getPrice()));
+        mView.getTvProName().setText(product.getProductName() + " " + product.getDesc());
+        mView.getTvCollectNum().setText(String.format("收藏 : %1s","88"));
+        mView.getTvBrows().setText(String.format("浏览 : %1s",product.getBrows()));
+        mView.getTvOnlineTime().setText(product.getOnlineTime());
 
         //userid对比
         if (product.getUserInfo().getId() == 1){
@@ -116,7 +121,7 @@ public class ProductDetailPresenter extends BaseMVPPresenter<ProductDetailModel,
         userInfo.setAuthen((Boolean) user.get("isAuthen"));
         userInfo.setAvatar(user.get("avatar").toString());
         userInfo.setId((Integer.parseInt(data.get("id").toString())));
-        userInfo.setNickName(user.get("nickname").toString());
+        userInfo.setNickname(user.get("nickname").toString());
         userInfo.setPhone(user.get("phone").toString());
         userInfo.setQq(user.get("qq").toString());
         userInfo.setRealName(user.get("realName").toString());

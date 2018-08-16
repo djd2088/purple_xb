@@ -1,7 +1,7 @@
 package com.rui.xb.purple.mvp.model.home;
 
 import com.rui.xb.purple.mvp.base.BaseMVPModule;
-import com.rui.xb.purple.utils.UrlRouter;
+import com.rui.xb.purple.app.UrlRouter;
 
 import java.util.HashMap;
 import java.util.Map;

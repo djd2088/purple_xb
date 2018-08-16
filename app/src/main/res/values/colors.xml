@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#7DD695</color>
+    <color name="colorPrimaryDark">#57C489</color>
+    <color name="colorAccent">#7DD695</color>
 
 
 
@@ -10,8 +10,10 @@
     <color name="transparent">#00000000</color>
     <color name="half_transparent">#e0000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="main">#FF4081</color>
-    <color name="end">#C71585</color>
+
+    <!-- main -->
+    <color name="main">#7DD695</color>
+    <color name="end">#57C489</color>
 
     <!--black begin-->
     <color name="we_chat_black">#323232</color>
@@ -20,23 +22,26 @@
 
 
     <!--gray begin-->
-    <color name="gray_F4F4">#F4F4F4</color>
+    <color name="gray_F7F7">#F7F7F7</color>
     <color name="gray_666">#666666</color>
     <color name="gray_999">#999999</color>
+    <color name="gray_ccc">#CCCCCC</color>
     <!--gray end-->
 
 
     <color name="bg">#dadada</color>
-    <color name="bg_gray">#F7F7F7</color>
+    <color name="bg_gray_F7">#F7F7F7</color>
+    <color name="bg_gray_F4">#F4F4F4</color>
 
-    <color name="line">#F8F8F8</color>
+    <color name="line">#F7F7F7</color>
 
 
     <color name="bg_white_FF">#FFFFFF</color>
 
-    <color name="red_ff5903">#FF5903</color>
+    <color name="red_fb4b4b">#FB4B4B</color>
 
 
+    <color name="tool_bar_tv_main">#323232</color>
 
 
 

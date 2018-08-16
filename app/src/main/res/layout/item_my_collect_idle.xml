@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/tv_price"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBaseline="@+id/tv_seller_name"
             android:layout_alignBottom="@+id/tv_seller_name"
             android:layout_alignParentRight="true"

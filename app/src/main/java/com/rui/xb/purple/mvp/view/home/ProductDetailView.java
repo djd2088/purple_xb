@@ -26,6 +26,8 @@ public interface ProductDetailView extends BaseMVPView {
 
     TextView getTvOnlineTime();
 
+    TextView getTvCollectNum();
+
     CircleImageView getSellerImg();
 
     TextView getTvSellerNick();
@@ -43,4 +45,5 @@ public interface ProductDetailView extends BaseMVPView {
     TextView getBuyOrManage();
 
     RelativeLayout getRlBuyOrManage();
+
 }

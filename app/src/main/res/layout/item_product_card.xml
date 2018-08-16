@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp_10"
+    android:layout_margin="@dimen/dp_12"
     android:padding="@dimen/dp_50"
     app:cardCornerRadius="@dimen/dp_5"
     app:cardElevation="@dimen/dp_5">
@@ -27,8 +27,8 @@
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_10"
             android:text="@string/price"
-            android:textColor="@color/main"
-            android:textSize="@dimen/sp_10" />
+            android:textColor="@color/red_fb4b4b"
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:id="@+id/tv_price"
@@ -37,19 +37,19 @@
             android:layout_alignBottom="@id/temp1"
             android:layout_marginLeft="@dimen/dp_30"
             android:layout_marginTop="@dimen/dp_10"
-            android:text="30"
-            android:textColor="@color/main"
-            android:textSize="@dimen/sp_10" />
+            android:textColor="@color/red_fb4b4b"
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:id="@+id/temp2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/iv_main_pic"
             android:layout_below="@id/iv_main_pic"
-            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_3"
             android:layout_marginTop="@dimen/dp_10"
+            android:layout_toLeftOf="@id/tv_brows"
             android:text="@string/brows"
+            android:textColor="@color/gray_666"
             android:textSize="@dimen/sp_10" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_below="@id/iv_main_pic"
             android:layout_marginRight="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_10"
-            android:text="100"
+            android:textColor="@color/gray_666"
             android:textSize="@dimen/sp_10" />
 
         <TextView
@@ -70,8 +70,8 @@
             android:layout_below="@id/tv_price"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
-            android:text="商品1"
-            android:textSize="@dimen/sp_10" />
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:id="@+id/tv_school_name"
@@ -81,7 +81,7 @@
             android:layout_marginBottom="@dimen/dp_10"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5"
-            android:text="上海大学"
+            android:textColor="@color/gray_999"
             android:textSize="@dimen/sp_10" />
     </RelativeLayout>
 

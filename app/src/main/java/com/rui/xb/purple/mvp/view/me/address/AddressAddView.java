@@ -1,5 +1,9 @@
 package com.rui.xb.purple.mvp.view.me.address;
 
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
 import com.rui.xb.purple.mvp.base.BaseMVPView;
 
 /**
@@ -7,5 +11,15 @@ import com.rui.xb.purple.mvp.base.BaseMVPView;
  */
 
 public interface AddressAddView extends BaseMVPView {
+
+    EditText getEtReceiveName();
+
+    EditText getEtPhone();
+
+    EditText getEtLocation();
+
+    TextView getTvProvince();
+
+    ToggleButton getTbSetDefault();
 
 }

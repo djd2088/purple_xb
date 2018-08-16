@@ -2,7 +2,6 @@ package com.rui.xb.purple.base;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
@@ -36,9 +35,9 @@ public abstract class BaseNoTitleActivity<P extends BaseMVPPresenter> extends
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_no_title);
+        setContentView(R.layout.activity_fragment_base_no_title);
         unbinder = ButterKnife.bind(this);
-        transparentStatusBar(false);
+        transparentStatusBar();
         bindView(initMainView());
         initDataAndView();
         // 添加到应用管理
@@ -80,14 +79,15 @@ public abstract class BaseNoTitleActivity<P extends BaseMVPPresenter> extends
         inflater.inflate(resId, llContent);
     }
 
-    protected void transparentStatusBar(boolean avoidWhite){
+    protected void transparentStatusBar(){
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             StatusBarCompat.translucentStatusBar(this,true);
-            if (avoidWhite){
-                StatusBarUtil.StatusBarLightMode(this);//避免白色
-            }
         }
 
+    }
+
+    protected void avoidWhiteStatusBar(){
+        StatusBarUtil.StatusBarLightMode(this);//避免白色
     }
 
 

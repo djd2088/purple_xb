@@ -30,7 +30,7 @@ public class TabMasterHotTopicFragment extends BaseFragment<TabMasterHotTopicPre
     @Override
     protected void initTitleBar() {
         hideTitleBar();
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
     }
 
     @Override

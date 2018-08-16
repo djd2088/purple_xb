@@ -12,31 +12,30 @@
 
         <TextView
             android:id="@+id/tv_add_name"
-            style="@style/tv_black_333_14sp"
-            android:text="杜建东" />
+            style="@style/tv_black_333_14sp" />
 
         <TextView
             android:id="@+id/tv_add_phone"
             style="@style/tv_black_333_14sp"
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_toRightOf="@id/tv_add_name"
-            android:text="17601333108" />
+            android:layout_toRightOf="@id/tv_add_name" />
 
         <TextView
             android:id="@+id/tv_default_add"
-            style="@style/tv_red_5903_12sp"
+            style="@style/tv_red_fb4b4b_12sp"
             android:layout_alignParentRight="true"
-            android:text="[默认地址]" />
+            android:text="[默认地址]"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_add_detail"
             style="@style/tv_gray_666_12sp"
             android:layout_below="@id/tv_add_name"
-            android:layout_marginTop="@dimen/dp_5"
-            android:text="上海市闵行区1518号" />
+            android:layout_marginTop="@dimen/dp_5" />
 
 
     </RelativeLayout>
 
+    <View style="@style/line_10dp" />
 
 </android.support.v7.widget.LinearLayoutCompat>

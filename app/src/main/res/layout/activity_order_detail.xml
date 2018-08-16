@@ -7,11 +7,17 @@
     android:background="@color/line"
     tools:context="com.rui.xb.purple.ui.activity.home.OrderDetailActivity">
 
+    <View
+        android:id="@+id/temp_line4"
+        style="@style/line_1dp" />
+
     <RelativeLayout
         android:id="@+id/temp_rl1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:layout_below="@id/temp_line4"
+        android:background="@color/white"
+        android:padding="@dimen/dp_8">
 
         <ImageView
             android:id="@+id/iv_product_pic"
@@ -21,19 +27,17 @@
 
         <TextView
             android:id="@+id/tv_product_name"
-            style="@style/tv_black_333_14sp"
+            style="@style/tv_black_333_15sp"
             android:layout_marginLeft="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_20"
-            android:layout_toRightOf="@id/iv_product_pic"
-            android:text="productName" />
+            android:layout_toRightOf="@id/iv_product_pic" />
 
         <TextView
             android:id="@+id/tv_price"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignStart="@id/tv_product_name"
             android:layout_below="@id/tv_product_name"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="￥ ： 200" />
+            android:layout_marginTop="@dimen/dp_20" />
 
     </RelativeLayout>
 
@@ -55,7 +59,7 @@
             style="@style/tv_black_333_14sp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
-            android:text="收货地址" />
+            android:text="@string/receive_address" />
 
         <ImageView
             android:id="@+id/temp_iv"
@@ -68,16 +72,16 @@
         <TextView
             android:id="@+id/tv_name_phone"
             style="@style/tv_gray_666_14sp"
-            android:layout_toLeftOf="@id/temp_iv"
-            android:text="杜建东 17601333108" />
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_toLeftOf="@id/temp_iv" />
 
         <TextView
             android:id="@+id/tv_add"
             style="@style/tv_gray_666_14sp"
             android:layout_alignEnd="@id/tv_name_phone"
             android:layout_below="@id/tv_name_phone"
-            android:layout_marginTop="@dimen/dp_2"
-            android:text="上海市闵行区联航路1518号" />
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_marginTop="@dimen/dp_2" />
 
     </RelativeLayout>
 
@@ -90,7 +94,8 @@
         android:id="@+id/rl_t_type"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_52"
-        android:layout_below="@id/temp_line2"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/temp_line2"
         android:background="@color/white">
 
         <TextView
@@ -98,7 +103,7 @@
             style="@style/tv_black_333_14sp"
             android:layout_marginLeft="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="配送方式" />
+            android:text="@string/dispatch_method" />
 
         <ImageView
             android:id="@+id/temp_iv2"
@@ -113,6 +118,7 @@
             android:id="@+id/tv_t_type"
             style="@style/tv_gray_666_14sp"
             android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_2"
             android:layout_toLeftOf="@id/temp_iv2"
             android:text="自提" />
     </RelativeLayout>
@@ -134,7 +140,7 @@
             style="@style/tv_black_333_14sp"
             android:layout_marginLeft="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="运费" />
+            android:text="@string/freight" />
 
         <ImageView
             android:id="@+id/temp_iv3"
@@ -148,10 +154,9 @@
 
         <TextView
             android:id="@+id/tv_t_fee"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_centerInParent="true"
-            android:layout_toLeftOf="@id/temp_iv3"
-            android:text="￥ : 0.00" />
+            android:layout_toLeftOf="@id/temp_iv3" />
     </RelativeLayout>
 
     <LinearLayout
@@ -170,13 +175,12 @@
 
             <TextView
                 style="@style/tv_black_333_14sp"
-                android:text="实付款 : " />
+                android:text="@string/real_pay" />
 
             <TextView
                 android:id="@+id/tv_real_pay"
-                style="@style/tv_red_5903_14sp"
-                android:layout_marginLeft="@dimen/dp_8"
-                android:text="￥ : 20.00 " />
+                style="@style/tv_red_fb4b4b_14sp"
+                android:layout_marginLeft="@dimen/dp_8" />
 
 
         </LinearLayout>
@@ -188,7 +192,7 @@
             android:layout_weight="2"
             android:background="@color/main"
             android:gravity="center"
-            android:text="确认"
+            android:text="@string/make_sure"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_14" />
 

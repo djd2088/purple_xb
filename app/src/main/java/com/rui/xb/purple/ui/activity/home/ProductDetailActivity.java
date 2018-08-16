@@ -10,7 +10,6 @@ import com.rui.xb.purple.R;
 import com.rui.xb.purple.base.BaseActivity;
 import com.rui.xb.purple.mvp.presenter.home.ProductDetailPresenter;
 import com.rui.xb.purple.mvp.view.home.ProductDetailView;
-import com.rui.xb.rui_core.utils.UiUtil;
 import com.youth.banner.Banner;
 
 import butterknife.BindView;
@@ -46,11 +45,21 @@ public class ProductDetailActivity extends BaseActivity<ProductDetailPresenter> 
     TextView tvPhone;
     @BindView(R.id.tv_buy_manage)
     TextView tvBuyManage;
+    @BindView(R.id.tv_price)
+    TextView tvPrice;
+    @BindView(R.id.tv_collect_num)
+    TextView tvCollectNum;
+    @BindView(R.id.tv_brows)
+    TextView tvBrows;
+    @BindView(R.id.tv_name_and_desc)
+    TextView tvNameAndDesc;
+    @BindView(R.id.tv_online_time)
+    TextView tvOnlineTime;
 
     @Override
     protected void initTitleBar() {
         setTvTitle("宝贝详情");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 
@@ -73,7 +82,7 @@ public class ProductDetailActivity extends BaseActivity<ProductDetailPresenter> 
 
     @Override
     public TextView getTvProName() {
-        return null;
+        return tvNameAndDesc;
     }
 
     @Override
@@ -83,17 +92,22 @@ public class ProductDetailActivity extends BaseActivity<ProductDetailPresenter> 
 
     @Override
     public TextView getTvPrice() {
-        return null;
+        return tvPrice;
     }
 
     @Override
     public TextView getTvBrows() {
-        return null;
+        return tvBrows;
     }
 
     @Override
     public TextView getTvOnlineTime() {
-        return null;
+        return tvOnlineTime;
+    }
+
+    @Override
+    public TextView getTvCollectNum() {
+        return tvCollectNum;
     }
 
     @Override
@@ -154,10 +168,4 @@ public class ProductDetailActivity extends BaseActivity<ProductDetailPresenter> 
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

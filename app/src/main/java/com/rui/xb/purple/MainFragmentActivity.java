@@ -54,8 +54,8 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
     private final ArrayList<BottomTabBean> TAB_BEANS = new ArrayList<>();
     private final ArrayList<Fragment> FRAGMENTS = new ArrayList<>();
     private static int mCurrentFragment = 0;
-    private final int mClickedColor = Color.parseColor("#FF4081");
-    private final int mNormalColor = Color.GRAY;
+    private final int mClickedColor = Color.parseColor("#7DD695");
+    private final int mNormalColor = Color.parseColor("#AAAAAA");
 
 
     @Override
@@ -70,16 +70,16 @@ public class MainFragmentActivity extends DaggerAppCompatActivity implements Vie
     /** 根据需要修改*/
     private void initData() {
         // 初始化底部信息
-        TAB_BEANS.add(new BottomTabBean("闲宝",getDrawableByMip(R.mipmap.tab_home),
-                getDrawableByMip(R.mipmap.tab_home_hover)));
-        TAB_BEANS.add(new BottomTabBean("分类",getDrawableByMip(R.mipmap.tab_class),
-                getDrawableByMip(R.mipmap.tab_class_hover)));
-        TAB_BEANS.add(new BottomTabBean("发布",getDrawableByMip(R.mipmap.tab_patients),
-                getDrawableByMip(R.mipmap.tab_patients_hover)));
-        TAB_BEANS.add(new BottomTabBean("消息",getDrawableByMip(R.mipmap.tab_patients),
-                getDrawableByMip(R.mipmap.tab_patients_hover)));
-        TAB_BEANS.add(new BottomTabBean("我的",getDrawableByMip(R.mipmap.tab_doctor),
-                getDrawableByMip(R.mipmap.tab_doctor_hover)));
+        TAB_BEANS.add(new BottomTabBean("闲宝",getDrawableByMip(R.mipmap.index_home),
+                getDrawableByMip(R.mipmap.index_home_green)));
+        TAB_BEANS.add(new BottomTabBean("分类",getDrawableByMip(R.mipmap.index_record),
+                getDrawableByMip(R.mipmap.index_record_green)));
+        TAB_BEANS.add(new BottomTabBean("发布",getDrawableByMip(R.mipmap.index_new),
+                getDrawableByMip(R.mipmap.index_new_green)));
+        TAB_BEANS.add(new BottomTabBean("消息",getDrawableByMip(R.mipmap.o2_index_news),
+                getDrawableByMip(R.mipmap.o2_index_news_green)));
+        TAB_BEANS.add(new BottomTabBean("我的",getDrawableByMip(R.mipmap.index_my),
+                getDrawableByMip(R.mipmap.index_my_green)));
 
         //初始化fragment
         FRAGMENTS.add(homeFragment);

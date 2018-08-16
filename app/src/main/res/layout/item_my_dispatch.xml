@@ -44,7 +44,7 @@
 
         <TextView
             android:id="@+id/tv_price"
-            style="@style/tv_red_5903_14sp"
+            style="@style/tv_red_fb4b4b_14sp"
             android:layout_alignBottom="@id/iv_main_pic"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/dp_10"

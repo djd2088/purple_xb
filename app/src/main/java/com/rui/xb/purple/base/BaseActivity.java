@@ -49,7 +49,6 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
     @Inject
     protected P mPresenter;
 
-    Unbinder unbinder;
 
 
     @Override
@@ -57,8 +56,8 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_base);
         bindView(initMainView());
-        unbinder = ButterKnife.bind(this);
-        transparentStatusBar(false);
+        ButterKnife.bind(this);
+        transparentStatusBar();
         initTitleBar();
         initDataAndView();
         // 添加到应用管理
@@ -76,7 +75,6 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
             mPresenter.dispose();
             mPresenter.onDetachView();
         }
-        unbinder.unbind();
         super.onDestroy();
     }
 
@@ -122,14 +120,15 @@ public abstract class BaseActivity<P extends BaseMVPPresenter> extends DaggerApp
     /**
      * 设置沉侵式状态栏
      */
-    protected void transparentStatusBar(boolean avoidWhite){
+    protected void transparentStatusBar(){
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             StatusBarCompat.translucentStatusBar(this,true);
-            if (avoidWhite){
-                StatusBarUtil.StatusBarLightMode(this);//避免白色
-            }
         }
 
+    }
+
+    protected void avoidWhiteStatusBar(){
+        StatusBarUtil.StatusBarLightMode(this);//避免白色
     }
 
 

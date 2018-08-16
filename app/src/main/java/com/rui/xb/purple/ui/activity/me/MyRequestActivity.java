@@ -23,7 +23,7 @@ public class MyRequestActivity extends BaseActivity<MyRequestPresenter> implemen
     @Override
     protected void initTitleBar() {
         setTvTitle("我的求购");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

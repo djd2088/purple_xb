@@ -2,44 +2,26 @@ package com.rui.xb.purple.mvp.presenter.home;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rui.xb.purple.R;
 import com.rui.xb.purple.mvp.base.BaseMVPPresenter;
-import com.rui.xb.purple.mvp.model.home.HomeModel;
 import com.rui.xb.purple.mvp.model.home.RequestRegionModel;
-import com.rui.xb.purple.mvp.view.home.HomeView;
 import com.rui.xb.purple.mvp.view.home.RequestRegionView;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyDispatchAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.MyRequestAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.ProductAdapter;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.MyRequestAdapterModel;
-import com.rui.xb.purple.ui.adapter.recycle_listview.model.ProductAdapterModel;
-import com.rui.xb.purple.utils.GlideImageLoader;
-import com.rui.xb.rui_core.app.Rui;
+import com.rui.xb.purple.adapter.recycle_listview.MyRequestAdapter;
+import com.rui.xb.purple.adapter.recycle_listview.model.MyRequestAdapterModel;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
-
-import io.reactivex.functions.Consumer;
-
-import static android.widget.LinearLayout.VERTICAL;
 
 /**
  * Created by Rui on 2018/7/4.

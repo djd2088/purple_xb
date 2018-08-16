@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 
 import com.google.gson.Gson;
-import com.rui.xb.purple.utils.UrlRouter;
+import com.rui.xb.purple.app.UrlRouter;
 import com.rui.xb.rui_core.net.rx.IRxRestService;
 
 import java.util.concurrent.TimeUnit;

@@ -23,7 +23,7 @@ public class AddressManageActivity extends BaseActivity<AddressManagePresenter> 
     @Override
     protected void initTitleBar() {
         setTvTitle("管理收货地址");
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 
@@ -35,7 +35,6 @@ public class AddressManageActivity extends BaseActivity<AddressManagePresenter> 
     @Override
     protected void initDataAndView() {
         mPresenter.onAttachView(this, this);
-        mPresenter.initView();
     }
 
     @Override
@@ -47,5 +46,11 @@ public class AddressManageActivity extends BaseActivity<AddressManagePresenter> 
     @OnClick(R.id.ll_add_new)
     public void onViewClicked() {
         UiUtil.startIntent(AddressManageActivity.this,AddressAddActivity.class);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.initView();
     }
 }

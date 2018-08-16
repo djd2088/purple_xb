@@ -79,7 +79,7 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
         llContent = rootView.findViewById(R.id.ll_content);
         inflater.inflate(initMainView(), llContent);
         unbinder = ButterKnife.bind(this,rootView);
-        transparentStatusBar(false);
+        transparentStatusBar();
         // 初始化标题栏
         initTitleBar();
         // 初始化布局
@@ -136,15 +136,14 @@ public abstract class BaseFragment<P extends BaseMVPPresenter>  extends DaggerFr
     /**
      * 设置沉侵式状态栏
      */
-    protected void transparentStatusBar(boolean avoidWhite){
+    protected void transparentStatusBar(){
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             StatusBarCompat.translucentStatusBar(getActivity(),true);
-            if (avoidWhite){
-                StatusBarUtil.StatusBarLightMode(getActivity());//避免白色
-            }
         }
+    }
 
-
+    protected void avoidWhiteStatusBar(){
+        StatusBarUtil.StatusBarLightMode(getActivity());//避免白色
     }
     /**
      * 隐藏titleBar

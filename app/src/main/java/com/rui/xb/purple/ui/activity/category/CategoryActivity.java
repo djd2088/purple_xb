@@ -47,7 +47,7 @@ public class CategoryActivity extends BaseActivity<CategoryActivityPresenter> im
         titleName = bundle.getString("categoryName");
 
         setTvTitle(titleName);
-        transparentStatusBar(true);
+        avoidWhiteStatusBar();
         leftClose();
     }
 

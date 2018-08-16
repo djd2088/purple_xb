@@ -27,13 +27,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="@dimen/dp_10"
-                android:src="@mipmap/top_search" />
+                android:src="@mipmap/search" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/search"
-                android:textColor="@color/gray_999"
+                android:textColor="@color/gray_ccc"
                 android:textSize="@dimen/sp_12" />
 
         </LinearLayout>
@@ -63,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never"
+                android:background="@color/gray_F7F7"
                 />
 
             <com.scwang.smartrefresh.layout.footer.ClassicsFooter
